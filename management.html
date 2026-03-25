@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Management Staff — ACC&S SACCO LTD</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/flatpickr.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="/css/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .team-block {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      border: 1px solid #e3efeb;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .team-block .image {
+      position: relative;
+      height: 420px;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+    .team-block .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .team-block .image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(230,168,23,0) 0%, rgba(7,26,16,0.5) 100%);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .team-block:hover .image::after {
+      opacity: 1;
+    }
+    .team-block .lower-content {
+      padding: 28px 24px;
+      text-align: center;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .team-block .lower-content h5 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: #133c36;
+      font-weight: 800;
+    }
+    .team-block .lower-content span {
+      display: inline-block;
+      margin-bottom: 0;
+      color: #0a7a66;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      font-size: 12px;
+    }
+    .team-block .lower-content p { margin: 0; color: #5e6a74; font-size: 14px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="preloader"></div>
+    <header class="main-header header-style-one">
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-left">
+            <ul class="info-list">
+              <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></li>
+              <li><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</li>
+            </ul>
+          </div>
+          <div class="top-right">
+            <ul class="useful-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="main-box">
+        <div class="logo-box">
+          <div class="logo"><a href="index.html"><img src="/images/logo.png" alt="ACC&S SACCO" style="height: 60px; width: auto; object-fit: contain;"></a></div>
+        </div>
+        <div class="nav-outer">
+          <nav class="nav main-menu">
+            <ul class="navigation">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="loans.html">Loans</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li class="dropdown"><a href="about.html">About</a>
+                <ul>
+                  <li><a href="about.html#board">Board of Directors</a></li>
+                  <li><a href="about.html#management">Management Staff</a></li>
+                  <li><a href="about.html#supervisory">Supervisory Staff</a></li>
+                </ul>
+              </li>
+              <li class="dropdown current"><a href="governance.html">Governance</a>
+                <ul>
+                  <li><a href="board.html">Board of Directors</a></li>
+                  <li><a href="management.html">Management Staff</a></li>
+                  <li><a href="supervisory.html">Supervisory Staff</a></li>
+                </ul>
+              </li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="outer-box"><a class="btn-two" href="contact.html">Join Us</a><div class="mobile-nav-toggler d-block d-lg-none"><i class="icon lnr-icon-bars"></i></div></div>
+      </div>
+    </header>
+
+    <section class="page-title" style="background-image: url(/images/headers/contact-us.jpg); padding: 100px 0; background-color: #071a10; position: relative;">
+      <div class="auto-container">
+        <div class="title-outer text-center">
+          <h1 class="title text-white" style="font-size: 48px; font-weight: 800; margin-bottom: 20px;">Management Staff</h1>
+          <ul class="page-breadcrumb" style="display: flex; justify-content: center; gap: 10px; color: #E6A817; list-style: none; padding: 0;">
+            <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+            <li>/</li>
+            <li>Governance</li>
+            <li>/</li>
+            <li>Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section pt-120 pb-120">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block"><div class="inner-box"><div class="image"><img src="/images/govt/John-Nganga-Thuku.jpg" alt="John Nganga Thuku"></div><div class="lower-content"><h5>John Nganga Thuku</h5><span>CEO</span></div></div></div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block"><div class="inner-box"><div class="image"><img src="/images/govt/Joseph-Karanja-Maara.jpg" alt="Joseph Karanja Maara"></div><div class="lower-content"><h5>Joseph Karanja Maara</h5><span>COO</span></div></div></div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block"><div class="inner-box"><div class="image"><img src="/images/govt/Lizzie-Waitherero-Njeri.jpg" alt="Lizzie Waitherero Njeri"></div><div class="lower-content"><h5>Lizzie Waitherero Njeri</h5><span>Head of Finance</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-widget-area">
+        <div class="container">
+          <div class="footer-widget-grid">
+            <div><a href="index.html" class="footer-brand__logo"><img src="/images/ACCS-footer-logo.png" alt="ACC&S SACCO" style="height: 80px; width: auto; object-fit: contain; margin-bottom: 15px;"></a><p class="footer-brand__desc">Mobilizing savings and providing affordable credit facilities to our members since 2006. Regulated by SASRA.</p></div>
+            <div><h6 class="footer-col-title">Contact Us</h6><ul class="footer-contact-list"><li><span class="fc-icon"><i class="fa-solid fa-envelope"></i></span><div class="fc-text"><span class="fc-label">Email</span><a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></div></li><li><span class="fc-icon"><i class="fa-solid fa-location-dot"></i></span><div class="fc-text"><span class="fc-label">Location</span>Nairobi, Kenya</div></li><li><span class="fc-icon"><i class="fa-solid fa-phone"></i></span><div class="fc-text"><span class="fc-label">Phone</span><a href="tel:+254712345678">+254 712 345 678</a></div></li></ul></div>
+            <div><h6 class="footer-col-title">Member Info</h6><span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> SASRA Regulated</span><p class="footer-hours"><strong>Office Hours</strong> Mon – Fri: 8:00 AM – 5:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>Sunday &amp; Public Holidays: Closed</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar"><div class="container"><p class="footer-bottom-bar__copy">&copy; 2026 ACC&S SACCO LTD. All Rights Reserved.</p></div></div>
+    </footer>
+
+    <a href="https://wa.me/254712345678" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/slick.min.js"></script>
+  <script src="/js/slick-animation.min.js"></script>
+  <script src="/js/jquery.fancybox.js"></script>
+  <script src="/js/wow.js"></script>
+  <script src="/js/appear.js"></script>
+  <script src="/js/mixitup.js"></script>
+  <script src="/js/flatpickr.js"></script>
+  <script src="/js/swiper.min.js"></script>
+  <script src="/js/gsap.min.js"></script>
+  <script src="/js/ScrollTrigger.min.js"></script>
+  <script src="/js/SplitText.min.js"></script>
+  <script src="/js/nice-select.min.js"></script>
+  <script src="/js/knob.js"></script>
+  <script src="/js/parallax.js"></script>
+  <script src="/js/vanilla-tilt.js"></script>
+  <script src="/js/splitting.js"></script>
+  <script src="/js/splitType.js"></script>
+  <script src="/js/script-gsap.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

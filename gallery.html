@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Gallery — ACC&S SACCO LTD</title>
+  <!-- Stylesheets -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/flatpickr.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="/css/slick.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      padding: 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      aspect-ratio: 4/3;
+      background: #f0f0f0;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(26,65,55,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: none;
+      display: block;
+      will-change: auto;
+    }
+
+    .gallery-item:hover img {
+      opacity: 0.95;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,65,55,0.85) 0%, rgba(15,45,42,0.90) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(230,168,23,0.2);
+      border: 2px solid #E6A817;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E6A817;
+      font-size: 20px;
+      margin-bottom: 14px;
+      transform: scale(0.8);
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay-icon {
+      transform: scale(1);
+    }
+
+    .gallery-title {
+      color: white;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 1.3;
+      text-align: right;
+    }
+
+    /* Gallery Filter Tabs */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      padding: 12px 32px;
+      border: 2px solid #E6A817;
+      background: transparent;
+      color: #071a10;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .filter-tab:hover {
+      background: rgba(230, 168, 23, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .filter-tab.active {
+      background: #E6A817;
+      color: white;
+      box-shadow: 0 4px 15px rgba(230, 168, 23, 0.3);
+    }
+
+    .gallery-item {
+      display: none;
+      animation: fadeInUp 0.6s ease both !important;
+    }
+
+    .gallery-item.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-title {
+        font-size: 14px;
+      }
+
+      .gallery-filters {
+        gap: 10px;
+      }
+
+      .filter-tab {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Main Header-->
+    <header class="main-header header-style-one">
+      <!-- Header Top -->
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-left">
+            <!-- Info List -->
+            <ul class="info-list">
+              <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></li>
+              <li><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</li>
+            </ul>
+          </div>
+
+          <div class="top-right">
+            <ul class="useful-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="top-social-icon">
+              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Header Top -->
+
+      <!-- Main box -->
+      <div class="main-box">
+        <div class="logo-box">
+          <div class="logo">
+            <a href="index.html">
+              <img src="/images/logo.png" alt="ACC&S SACCO" style="height: 60px; width: auto; object-fit: contain;">
+            </a>
+          </div>
+        </div>
+        <!--Nav Box-->
+        <div class="nav-outer">
+          <nav class="nav main-menu">
+            <ul class="navigation">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="loans.html">Loans</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li class="dropdown"><a href="about.html">About</a>
+                <ul>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="about.html#mission">Mission</a></li>
+                  <li><a href="about.html#vision">Vision</a></li>
+                  <li><a href="about.html#why-choose-us">Why Choose Us</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="governance.html">Governance</a>
+                <ul>
+                  <li><a href="board.html">Board of Directors</a></li>
+                  <li><a href="management.html">Management Staff</a></li>
+                  <li><a href="supervisory.html">Supervisory Staff</a></li>
+                </ul>
+              </li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li class="current"><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="outer-box">
+          <div class="info-box">
+
+            <a class="btn-two" href="contact.html">Join Us</a>
+          </div>
+          <div class="mobile-nav-toggler d-block d-lg-none"><i class="icon lnr-icon-bars"></i></div>
+        </div>
+      </div>
+
+      <!-- Sticky Header  -->
+      <div class="sticky-header">
+        <div class="auto-container">
+          <div class="inner-container">
+            <div class="logo">
+              <a href="index.html">
+                <img src="/images/logo.png" alt="ACC&S SACCO" style="height: 50px; width: auto; object-fit: contain;">
+              </a>
+            </div>
+            <div class="nav-outer">
+              <nav class="main-menu">
+                <div class="navbar-collapse show collapse clearfix">
+                  <ul class="navigation clearfix">
+                    <!-- Javascript will fill this -->
+                  </ul>
+                </div>
+              </nav>
+              <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--End Main Header -->
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url(/images/headers/gallery-header.jpg); padding: 100px 0; background-color: #071a10; position: relative;">
+      <div class="auto-container">
+        <div class="title-outer text-center">
+          <h1 class="title text-white" style="font-size: 48px; font-weight: 800; margin-bottom: 20px;">Our Gallery</h1>
+          <ul class="page-breadcrumb" style="display: flex; justify-content: center; gap: 10px; color: #E6A817; list-style: none; padding: 0;">
+            <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+            <li>/</li>
+            <li>Gallery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section pt-120 pb-120">
+      <div class="container">
+        <div class="row mb-30">
+          <div class="col-lg-8 mx-auto text-center">
+            <h6 style="color: #E6A817; font-weight: 800; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">Moments & Memories</h6>
+            <h2 style="font-size: 42px; font-weight: 800; color: #071a10; margin-bottom: 15px; line-height: 1.2;">Capturing Our Journey</h2>
+            <p style="font-size: 16px; color: #666; line-height: 1.8; max-width: 600px; margin: 0 auto;">Explore moments from ACC&S SACCO events, member activities, and our community's journey towards financial empowerment and sustainable development.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-filters">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="2026">2026 AGM</button>
+          <button class="filter-tab" data-filter="2025">2025 AGM</button>
+          <button class="filter-tab" data-filter="2024">2024 AGM</button>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Item 1 -->
+          <div class="gallery-item active" data-filter="all 2026" style="animation: fadeInUp 0.6s ease 0.0s both;">
+            <img src="/images/gellery/8r-600x400.jpg" alt="Member Meeting 2026" width="600" height="400" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="gallery-title">Member Gathering 2026</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item active" data-filter="all 2026" style="animation: fadeInUp 0.6s ease 0.1s both;">
+            <img src="/images/gellery/board-1-600x400.jpeg" alt="Board Meeting 2026" width="600" height="400" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="gallery-title">Board Session 2026</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item active" data-filter="all 2026" style="animation: fadeInUp 0.6s ease 0.2s both;">
+            <img src="/images/gellery/creditcommitee-600x600.jpeg" alt="Credit Committee 2026" width="600" height="600" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="gallery-title">Credit Committee Meeting 2026</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item active" data-filter="all 2025" style="animation: fadeInUp 0.6s ease 0.0s both;">
+            <img src="/images/gellery/8r-1024x683.jpg" alt="Community Event 2025" width="1024" height="683" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="gallery-title">Community Engagement 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item active" data-filter="all 2025" style="animation: fadeInUp 0.6s ease 0.1s both;">
+            <img src="/images/gellery/board-1-360x320.jpeg" alt="Leadership Session 2025" width="360" height="320" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="gallery-title">Leadership Session 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="gallery-item active" data-filter="all 2024" style="animation: fadeInUp 0.6s ease 0.2s both;">
+            <img src="/images/gellery/DSC_0104-300x200.jpg" alt="Annual Event 2024" width="300" height="200" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="gallery-title">Annual General Meeting 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer area start here -->
+    <footer class="main-footer">
+      <div class="footer-widget-area">
+        <div class="container">
+          <div class="footer-widget-grid">
+
+            <!-- Col 1: Logo & Brand -->
+            <div>
+              <a href="index.html" class="footer-brand__logo">
+                <img src="/images/ACCS-footer-logo.png" alt="ACC&S SACCO" style="height: 80px; width: auto; object-fit: contain; margin-bottom: 15px;">
+              </a>
+              <p class="footer-brand__desc">Mobilizing savings and providing affordable credit facilities to our members since 2006. Regulated by SASRA.</p>
+              <div class="footer-brand__social">
+                <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="footer-social-btn" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <!-- Col 2: Contact Info -->
+            <div>
+              <h6 class="footer-col-title">Contact Us</h6>
+              <ul class="footer-contact-list">
+                <li>
+                  <span class="fc-icon"><i class="fa-solid fa-envelope"></i></span>
+                  <div class="fc-text"><span class="fc-label">Email</span><a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></div>
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fa-solid fa-location-dot"></i></span>
+                  <div class="fc-text"><span class="fc-label">Location</span>Nairobi, Kenya</div>
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fa-solid fa-phone"></i></span>
+                  <div class="fc-text"><span class="fc-label">Phone</span><a href="tel:+254712345678">+254 712 345 678</a></div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Member Info & Hours -->
+            <div>
+              <h6 class="footer-col-title">Member Info</h6>
+              <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> SASRA Regulated</span>
+              <p class="footer-hours">
+                <strong>Office Hours</strong>
+                Mon – Fri: 8:00 AM – 5:00 PM<br>
+                Saturday: 9:00 AM – 1:00 PM<br>
+                Sunday &amp; Public Holidays: Closed
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="container">
+          <p class="footer-bottom-bar__copy">
+            &copy; <span id="year">2026</span> ACC&amp;S SACCO LTD. All Rights Reserved. | Regulated by <span>SASRA</span>
+          </p>
+          <div class="footer-bottom-bar__reg">
+            <span>SASRA Member <i class="fa-solid fa-check"></i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254712345678?text=Hello%20ACC%S%20SACCO" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/slick.min.js"></script>
+  <script src="/js/wow.js"></script>
+  <script src="/js/script.js"></script>
+
+  <script>
+    // Gallery Filter Functionality with performance optimization
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', event => {
+        event.preventDefault();
+        const filterValue = tab.getAttribute('data-filter');
+        
+        // Update active tab
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Use requestAnimationFrame for smooth performance
+        requestAnimationFrame(() => {
+          // Filter gallery items
+          galleryItems.forEach(item => {
+            const itemFilters = item.getAttribute('data-filter').split(' ');
+            const shouldShow = filterValue === 'all' || itemFilters.includes(filterValue);
+            
+            item.classList.toggle('active', shouldShow);
+          });
+        });
+      });
+    });
+
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

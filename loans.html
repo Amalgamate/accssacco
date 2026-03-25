@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Loan Products — ACC&S SACCO LTD</title>
+  <style>
+    .loan-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      cursor: pointer;
+      height: 100%;
+      border: 1px solid #e8e8e8;
+    }
+    .loan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+    .loan-card__img-wrap {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .loan-card__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .loan-card:hover .loan-card__img-wrap img { transform: scale(1.04); }
+    .loan-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .loan-card:hover .loan-card__overlay {
+      opacity: 1;
+    }
+    .loan-card__num {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(230,168,23,0.9);
+      padding: 6px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+    .loan-card__body {
+      padding: 24px 22px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .loan-card__title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #071a10;
+      margin: 0 0 12px;
+    }
+    .loan-card__text {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+    .loan-card__list {
+      padding: 0;
+      list-style: none;
+      font-size: 13px;
+      color: #0a7a66;
+      margin-top: auto;
+    }
+    .loan-card__list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .loan-card__list i {
+      font-size: 12px;
+      color: #E6A817;
+    }
+  </style>
+  <!-- Stylesheets -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/flatpickr.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="/css/slick.css">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Main Header-->
+    <header class="main-header header-style-one">
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-left">
+            <ul class="info-list">
+              <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></li>
+              <li><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</li>
+            </ul>
+          </div>
+          <div class="top-right">
+            <ul class="useful-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-box">
+        <div class="logo-box">
+          <div class="logo">
+            <a href="index.html">
+              <img src="/images/logo.png" alt="ACC&S SACCO" style="height: 60px; width: auto; object-fit: contain;">
+            </a>
+          </div>
+        </div>
+        <div class="nav-outer">
+          <nav class="nav main-menu">
+            <ul class="navigation">
+              <li><a href="index.html">Home</a></li>
+              <li class="current"><a href="loans.html">Loans</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li class="dropdown"><a href="about.html">About</a>
+                <ul>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="about.html#mission">Mission</a></li>
+                  <li><a href="about.html#vision">Vision</a></li>
+                  <li><a href="about.html#why-choose-us">Why Choose Us</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="governance.html">Governance</a>
+                <ul>
+                  <li><a href="board.html">Board of Directors</a></li>
+                  <li><a href="management.html">Management Staff</a></li>
+                  <li><a href="supervisory.html">Supervisory Staff</a></li>
+                </ul>
+              </li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="outer-box">
+          <a class="btn-two" href="contact.html">Join Us</a>
+          <div class="mobile-nav-toggler d-block d-lg-none"><i class="icon lnr-icon-bars"></i></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url(/images/headers/loan-products-header-1.jpg); padding: 100px 0; background-color: #071a10; position: relative;">
+      <div class="auto-container">
+        <div class="title-outer text-center">
+          <h1 class="title text-white" style="font-size: 48px; font-weight: 800; margin-bottom: 20px;">Loan Products</h1>
+          <ul class="page-breadcrumb" style="display: flex; justify-content: center; gap: 10px; color: #E6A817; list-style: none; padding: 0;">
+            <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+            <li>/</li>
+            <li>Loans</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loans Grid Section -->
+    <section class="service-section pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <!-- Vision 120 -->
+          <div class="col-lg-4 col-md-6 mb-30" id="vision120">
+            <div class="loan-card wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1000ms">
+              <div class="loan-card__img-wrap">
+                <img src="/images/loans/Vision-120-Loan.png" alt="Vision 120 Loan">
+                <div class="loan-card__overlay"></div>
+                <span class="loan-card__num">01</span>
+              </div>
+              <div class="loan-card__body">
+                <h4 class="loan-card__title">Vision 120 Loan</h4>
+                <p class="loan-card__text">Flagship product for members with strong saving history. Borrow up to 120× your monthly savings.</p>
+                <ul class="loan-card__list">
+                  <li><i class="fa-solid fa-check"></i> Repayment up to 60 months</li>
+                  <li><i class="fa-solid fa-check"></i> Competitive annual interest</li>
+                  <li><i class="fa-solid fa-check"></i> Insurance cover included</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Development -->
+          <div class="col-lg-4 col-md-6 mb-30" id="development">
+            <div class="loan-card wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
+              <div class="loan-card__img-wrap">
+                <img src="/images/loans/ACCS-development-loans.jpg" alt="Development Loan">
+                <div class="loan-card__overlay"></div>
+                <span class="loan-card__num">02</span>
+              </div>
+              <div class="loan-card__body">
+                <h4 class="loan-card__title">Development Loan</h4>
+                <p class="loan-card__text">Long-term finance for property, construction, renovation, and land purchase.</p>
+                <ul class="loan-card__list">
+                  <li><i class="fa-solid fa-check"></i> Repayment up to 72 months</li>
+                  <li><i class="fa-solid fa-check"></i> High borrowing limits</li>
+                  <li><i class="fa-solid fa-check"></i> Flexible security requirement</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Consolidation -->
+          <div class="col-lg-4 col-md-6 mb-30" id="consolidation">
+            <div class="loan-card wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+              <div class="loan-card__img-wrap">
+                <img src="/images/loans/accs-Emergency-Loans.jpg" alt="Loan Consolidation">
+                <div class="loan-card__overlay"></div>
+                <span class="loan-card__num">03</span>
+              </div>
+              <div class="loan-card__body">
+                <h4 class="loan-card__title">Loan Consolidation</h4>
+                <p class="loan-card__text">Simplify multiple loans into one manageable facility with single monthly repayment.</p>
+                <ul class="loan-card__list">
+                  <li><i class="fa-solid fa-check"></i> Merge up to 3 existing loans</li>
+                  <li><i class="fa-solid fa-check"></i> Lower interest overall</li>
+                  <li><i class="fa-solid fa-check"></i> Streamlined cashflow</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Exit Loan -->
+          <div class="col-lg-4 col-md-6 mb-30" id="exit">
+            <div class="loan-card wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1000ms">
+              <div class="loan-card__img-wrap">
+                <img src="/images/loans/accs-Emergency-Loans-1.jpg" alt="Exit Loan">
+                <div class="loan-card__overlay"></div>
+                <span class="loan-card__num">04</span>
+              </div>
+              <div class="loan-card__body">
+                <h4 class="loan-card__title">Exit Loan</h4>
+                <p class="loan-card__text">Designed for retiring or withdrawing members to settle outstanding obligations.</p>
+                <ul class="loan-card__list">
+                  <li><i class="fa-solid fa-check"></i> Offset against terminal savings</li>
+                  <li><i class="fa-solid fa-check"></i> Fast reconciliation</li>
+                  <li><i class="fa-solid fa-check"></i> Smooth transition support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Shamba -->
+          <div class="col-lg-4 col-md-6 mb-30" id="shamba">
+            <div class="loan-card wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
+              <div class="loan-card__img-wrap">
+                <img src="/images/loans/accs-Emergency-Loans (2).jpg" alt="Shamba Loan">
+                <div class="loan-card__overlay"></div>
+                <span class="loan-card__num">05</span>
+              </div>
+              <div class="loan-card__body">
+                <h4 class="loan-card__title">Shamba Loan</h4>
+                <p class="loan-card__text">Agricultural and land development financing for land purchase or cultivation.</p>
+                <ul class="loan-card__list">
+                  <li><i class="fa-solid fa-check"></i> Seasonal repayment schedules</li>
+                  <li><i class="fa-solid fa-check"></i> Linked to farm yields</li>
+                  <li><i class="fa-solid fa-check"></i> Agri-input support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Bridging -->
+          <div class="col-lg-4 col-md-6 mb-30" id="bridging">
+            <div class="loan-card wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+              <div class="loan-card__img-wrap">
+                <img src="/images/loans/Vision-120-Loan.png" alt="Bridging Loan">
+                <div class="loan-card__overlay"></div>
+                <span class="loan-card__num">06</span>
+              </div>
+              <div class="loan-card__body">
+                <h4 class="loan-card__title">Bridging Loan</h4>
+                <p class="loan-card__text">Short-term financing to cover immediate gaps before long-term funding arrives.</p>
+                <ul class="loan-card__list">
+                  <li><i class="fa-solid fa-check"></i> Minimal documentation</li>
+                  <li><i class="fa-solid fa-check"></i> 24-48-hour approval</li>
+                  <li><i class="fa-solid fa-check"></i> Backed by savings balance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="strategy-section pt-80 pb-80" style="background: #f8f9fa;">
+        <div class="container text-center">
+            <h3 style="font-weight: 800; margin-bottom: 15px;">Ready to apply for a loan?</h3>
+            <p style="color: #666; margin-bottom: 30px;">Visit our offices in Nairobi or contact us for more details on requirements and current rates.</p>
+            <a href="contact.html" class="btn-two">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-widget-area">
+        <div class="container">
+          <div class="footer-widget-grid">
+
+            <!-- Col 1: Logo & Brand -->
+            <div>
+              <a href="index.html" class="footer-brand__logo">
+                <img src="/images/ACCS-footer-logo.png" alt="ACC&S SACCO" style="height: 80px; width: auto; object-fit: contain; margin-bottom: 15px;">
+              </a>
+              <p class="footer-brand__desc">Mobilizing savings and providing affordable credit facilities to our members since 2006. Regulated by SASRA.</p>
+              <div class="footer-brand__social">
+                <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="footer-social-btn" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <!-- Col 2: Contact Info -->
+            <div>
+              <h6 class="footer-col-title">Contact Us</h6>
+              <ul class="footer-contact-list">
+                <li>
+                  <span class="fc-icon"><i class="fa-solid fa-envelope"></i></span>
+                  <div class="fc-text"><span class="fc-label">Email</span><a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></div>
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fa-solid fa-location-dot"></i></span>
+                  <div class="fc-text"><span class="fc-label">Location</span>Nairobi, Kenya</div>
+                </li>
+                <li>
+                  <span class="fc-icon"><i class="fa-solid fa-phone"></i></span>
+                  <div class="fc-text"><span class="fc-label">Phone</span><a href="tel:+254712345678">+254 712 345 678</a></div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Member Info & Hours -->
+            <div>
+              <h6 class="footer-col-title">Member Info</h6>
+              <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> SASRA Regulated</span>
+              <p class="footer-hours">
+                <strong>Office Hours</strong>
+                Mon – Fri: 8:00 AM – 5:00 PM<br>
+                Saturday: 9:00 AM – 1:00 PM<br>
+                Sunday &amp; Public Holidays: Closed
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom-bar">
+        <div class="container">
+          <p class="footer-bottom-bar__copy">&copy; 2026 <span>ACC&amp;S SACCO LTD.</span> All rights reserved.</p>
+          <div class="footer-bottom-bar__reg">
+            <i class="fa-solid fa-circle-check"></i>
+            Registered &amp; Regulated by SASRA, Kenya
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254712345678" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/slick.min.js"></script>
+  <script src="/js/slick-animation.min.js"></script>
+  <script src="/js/jquery.fancybox.js"></script>
+  <script src="/js/wow.js"></script>
+  <script src="/js/appear.js"></script>
+  <script src="/js/mixitup.js"></script>
+  <script src="/js/flatpickr.js"></script>
+  <script src="/js/swiper.min.js"></script>
+  <script src="/js/gsap.min.js"></script>
+  <script src="/js/ScrollTrigger.min.js"></script>
+  <script src="/js/SplitText.min.js"></script>
+  <script src="/js/nice-select.min.js"></script>
+  <script src="/js/knob.js"></script>
+  <script src="/js/parallax.js"></script>
+  <script src="/js/vanilla-tilt.js"></script>
+  <script src="/js/splitting.js"></script>
+  <script src="/js/splitType.js"></script>
+  <script src="/js/script-gsap.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

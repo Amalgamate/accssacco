@@ -1,0 +1,665 @@
+:root {
+  --dark-color1: #063232;
+  --dark-color2: #0F2727;
+  --dark-color2-rgb: 15, 39, 39;
+  --dark-color3: #061419;
+  --dark-color4: #1A4137;
+}
+
+.bg-dark-1 {
+  background-color: var(--dark-color1) !important;
+}
+
+.bg-dark-2 {
+  background-color: var(--dark-color2) !important;
+}
+
+.bg-dark-3 {
+  background-color: var(--dark-color3) !important;
+}
+
+.bg-dark-4 {
+  background-color: var(--dark-color4) !important;
+}
+
+body,
+.page-wrapper,
+.page-wrapper.gray-bg,
+.sticky-header,
+.header-style-one .main-box,
+.header-style-one .sticky-header.fixed-header,
+.header-style-two .sticky-header.fixed-header,
+.header-style-five .main-box,
+.header-style-five .sticky-header.fixed-header,
+.btn-one-light,
+.accordion-area .accordion .accordion-item,
+.case-block .inner-box .content-box,
+.testimonial-block .inner-box .image-box .star,
+.testimonial-block .inner-box .image-box .star::after,
+.header-style-two .header-top,
+.brand-section .sec-title .title,
+.service-list-three,
+.feature-block .inner-box,
+.contact-block,
+.service-block-two .inner-box,
+.team-block-three .inner-box:hover .content-box,
+.service-block-four .acc .acc-item,
+.choose-section-four,
+.client-section-three,
+.strategy-section.style-two .accordion-area .accordion .accordion-item,
+.strategy-section.style-two .accordion-area .accordion .show .accordion-body,
+.strategy-section.style-two .accordion-header,
+.header-style-seven .main-box .logo-box,
+.banner-section-seven .btn-wrp {
+  background-color: var(--dark-color2) !important;
+}
+
+.blog-section-four,
+.strategy-section.style-two .accordion-area .accordion .accordion-button {
+  background: var(--dark-color2);
+}
+
+.border-color-dark2,
+.testimonial-block .inner-box .image-box .star,
+.testimonial-block .inner-box .image-box .star::after,
+.about-section-three .image-column .inner-column .info .user ul li img,
+.header-style-seven .main-box .logo-box::before,
+.header-style-seven .main-box .logo-box::after,
+.banner-section-seven .btn-wrp::before,
+.banner-section-seven .btn-wrp::after {
+  border-color: var(--dark-color2);
+}
+
+a {
+  color: inherit;
+}
+
+.banner-section-three::after,
+.header-style-three,
+.header-style-one .header-lower .logo-box:before,
+.header-style-one .main-box .btn-box:before,
+.header-style-four .header-top,
+.header-style-three .sticky-header.fixed-header,
+.header-style-six .sticky-header.fixed-header,
+.btn-two,
+.processing-section,
+.case-section.have-combine::after,
+.accordion-area .accordion .accordion-item .accordion-header button.accordion-button.collapsed,
+.strategy-section,
+.team-block .inner-box,
+.faq-accordion .accordion .accordion-button,
+.testimonial-section .outer-box,
+.blog-block .inner-box .content-box,
+.header-style-two,
+.header-style-two .main-box,
+.header-style-two .main-box .outer-box .info-box .btn-one-light,
+.header-style-four,
+.header-style-four .main-box,
+.banner-section-two,
+.banner-section-four,
+.about-section-two .image-column .inner-column .image::after,
+.about-section-two .content-column .inner-column .sec-title .text,
+.service-block-three,
+.steps-block .icon .number,
+.feature-section.have-padding,
+.team-block-two .inner-box .image-box .socials,
+.contact-section,
+.blog-block-two .inner-box,
+.footer-style-two,
+.funfact-section::after,
+.service-section-two,
+.service-block-two .inner-box:hover .btn-two-rounded,
+.objective-section::after,
+.case-section-three,
+.pricing-block .inner-box,
+.pricing-block.active .inner-box .btn-one-rounded,
+.pricing-section.have-after::after,
+.team-section-three,
+.testimonial-section-three::after,
+.footer-cta .btn-wrp .cta-btn,
+.pricing-block.active .inner-box .tag,
+.about-section-four .image-column .inner-column .info,
+.header-style-four .sticky-header.fixed-header,
+.service-section-four,
+.choose-block-four,
+.funfact-section-four,
+.pricing-block-two .inner-box,
+.pricing-block-two .popular,
+.pricing-block-two.active .inner-box .btn-one-rounded,
+.pricing-section-two.have-after::after,
+.testimonial-section-four,
+.contact-section-four .outer-box,
+.main-footer.footer-style-four,
+.faq-section.home5-style,
+.team-five__item .content,
+.pricing-wrapper-six .pricing-card-item,
+.pricing-wrapper-six .pricing-card-item:hover,
+.main-footer.footer-style-three.at-home6,
+.case-section.white-bg,
+.faq-section-three .content-column .inner-column,
+.team-block-four .inner-box,
+.testimonial-section-six .outer-box {
+  background-color: var(--dark-color1);
+}
+
+.process-section-four {
+  background: var(--dark-color1);
+}
+
+.about-section .image-column .inner-column .image1,
+.about-section .image-column .inner-column .image2,
+.border-color-dark1,
+.about-section-seven .image-column .inner-column .image2 {
+  border-color: var(--dark-color1);
+}
+
+.header-top {
+  border-bottom-color: var(--dark-color1);
+}
+
+.service-section,
+.faq-section,
+.banner-section-two .content-column .inner-column .content-box .btn-wrp .video-btn,
+.funfact-section-two.have-after::after,
+.service-section-three,
+.service-list-three ul li a,
+.faq-section-two .content-column .inner-column,
+.team-section-two,
+.professional__image .content,
+.testimonial-section-three.home6-style .sec-wrp {
+  background-color: var(--dark-color3);
+}
+
+.about-section .content-column .info-box {
+  border-bottom: 1px solid var(--dark-color2);
+}
+
+.pricing-block-five .inner-box .content-column .inner-column {
+  border-color: var(--dark-color3);
+}
+
+.objective-block,
+.objective-section .content-column .inner-column,
+.team-section-three .team-block-three .inner-box .image-box .socials,
+.main-footer.footer-style-three,
+.pricing-block-two.active .inner-box .top .title,
+.pricing-wrapper-six .pricing-card-item .pricing-left-ber .pricing-icon::before,
+.bg-thm4 {
+  background-color: var(--dark-color4);
+}
+
+.service-block-two .inner-box .content-box .btn-two-rounded {
+  background-color: rgb(32, 60, 60);
+}
+
+.sec-title .text,
+.about-block .inner-box .text,
+.text-color {
+  color: #cccccc;
+}
+
+.contact-block form .input input::-webkit-input-placeholder, .contact-block form textarea::-webkit-input-placeholder, .contact-block-four .input-feild input::-webkit-input-placeholder, .contact-block-four .input-feild textarea::-webkit-input-placeholder {
+  color: #9E9E9E !important;
+}
+
+.contact-block form .input input::-moz-placeholder, .contact-block form textarea::-moz-placeholder, .contact-block-four .input-feild input::-moz-placeholder, .contact-block-four .input-feild textarea::-moz-placeholder {
+  color: #9E9E9E !important;
+}
+
+.contact-block form .input input:-ms-input-placeholder, .contact-block form textarea:-ms-input-placeholder, .contact-block-four .input-feild input:-ms-input-placeholder, .contact-block-four .input-feild textarea:-ms-input-placeholder {
+  color: #9E9E9E !important;
+}
+
+.contact-block form .input input::-ms-input-placeholder, .contact-block form textarea::-ms-input-placeholder, .contact-block-four .input-feild input::-ms-input-placeholder, .contact-block-four .input-feild textarea::-ms-input-placeholder {
+  color: #9E9E9E !important;
+}
+
+.choose-section .content-column .inner-column .content-box .text,
+.processing-block .inner-box .text,
+.team-block .inner-box .content-box .sub-title,
+.testimonial-block .inner-box .content-box .title span,
+.banner-section-two .content-column .inner-column .content-box .text,
+.about-section-two .content-column .inner-column .sec-title .text,
+.service-block-three .content .list li,
+.growth-section-two .growth-block .content-box .text,
+.contact-section .content-column .info .sub-title,
+.contact-block .head .sub-title,
+.contact-block form .input input::placeholder,
+.contact-block form textarea::placeholder,
+.contact-block form .nice-select .current,
+.nice-select::before,
+.faq-two-accordion .accordion .accordion-item .accordion-body .text,
+.steps-block .text,
+.sec-title .flex-content .flex-text,
+.about-section-three .image-column .inner-column .text,
+.about-block-three .content-box .text,
+.service-block-two .inner-box .content-box .text,
+.objective-section .content-column .inner-column .nav.nav-tabs .nav-item .nav-link,
+.objective-section .content-column .inner-column .content ul li,
+.pricing-block .inner-box .head .sub-title,
+.pricing-block .inner-box .list li,
+.team-block-three .inner-box .content-box .sub-title,
+.blog-block-three .inner-box .content-box .info li a,
+.about-section-four .content-column .inner-column .content-box .item .text,
+.process-section-four .process-tab .nav.nav-tabs .nav-link,
+.pricing-block-two .inner-box .list li:last-child,
+.pricing-block-two .inner-box .top .sub-title,
+.pricing-block-two .inner-box .bottom .title span,
+.pricing-block-two .inner-box .bottom .sub-title,
+.contact-block-four .input-feild input::placeholder,
+.contact-block-four .input-feild textarea::placeholder,
+.contact-block-four .nice-select .current,
+.header-style-five .outer-box .info-box .call-info .title,
+.about-wrapper-4 .about-content .sec-title .about-text,
+.about-wrapper-4 .about-content .about-icon-box .count-box p,
+.choose-section .content-column .inner-column .choose-tab .nav .nav-item .nav-link,
+.team-five__item:hover .content .sub-title,
+.accordion-area .accordion .accordion-item .accordion-body .text,
+.testimonial-block-five .inner-box .content-box .text,
+.banner-section-six .banner-slider .info-column .text2,
+.feature-two__item .feature__content p,
+.pricing-wrapper-six .pricing-content p,
+.choose-section-seven .content-column .inner-column .choose-tab .nav .nav-item .nav-link,
+.choose-section-seven .content-column .inner-column .content-box .text,
+.team-block-four .inner-box .content-box .sub-title,
+.testimonial-block-six .text,
+.testimonial-block-six .info .title span,
+.footer-style-two .footer-widget.about-widget .text {
+  color: #9E9E9E !important;
+}
+
+.pricing-block .inner-box svg path,
+.blog-block-three .inner-box .content-box .info li svg path,
+.feature-two__item .feature__icon svg path {
+  fill: #9E9E9E;
+}
+
+.case-block .inner-box:hover .arry-btn,
+.gellery-block .click-btn-wrp {
+  background-color: #fff;
+}
+
+.header-top .top-left .info-list li,
+.header-style-one .main-menu .navigation > li > a,
+.header-style-two .main-menu .navigation > li > a,
+.header-style-two .main-menu .navigation li.dropdown .dropdown-btn,
+.header-style-three .main-menu .navigation > li > a,
+.header-style-four .main-menu .navigation > li > a,
+.header-style-five .main-menu .navigation > li > a,
+.header-style-five .main-menu .navigation > li > a:before,
+.header-style-five .main-menu .navigation li.dropdown .dropdown-btn,
+.header-style-five .main-menu .navigation li a:hover,
+.header-style-six .main-menu .navigation > li > a,
+.header-style-seven .sticky-header .main-menu .navigation li a,
+.header-style-seven .sticky-header .main-menu .navigation li .dropdown-btn,
+h1,
+h2,
+strong,
+.sec-title h2,
+.header-style-one .outer-box .info-box .call-info a,
+.about-block .inner-box .title,
+.progress .progress-title,
+.choose-section .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active,
+.choose-section .content-column .inner-column .content-box .list ul li,
+.btn-one-light,
+.processing-block .inner-box .title,
+.processing-block .inner-box:hover .number,
+.processing-section .sec-text,
+.case-block .inner-box .content-box .sub-title,
+.case-block .inner-box .content-box .title,
+.accordion-area .accordion .accordion-item .accordion-header button,
+.faq-two-accordion .accordion .accordion-item .accordion-header button,
+.accordion-area .accordion .accordion-button::before,
+.team-block .inner-box .content-box .title,
+.testimonial-block .inner-box .content-box .text,
+.testimonial-block .inner-box .content-box .title,
+.testimonial-slider .swiper-arry button,
+.blog-block .inner-box .content-box .title,
+.blog-block .inner-box .content-box .arry-btn,
+.blog-block .inner-box .content-box .info li a,
+.banner-section-two .content-column .inner-column .content-box .btn-wrp .video-btn,
+.brand-section .sec-title .title,
+.about-block-two .item .con,
+.about-section-two .content-column .inner-column .list li,
+.about-section-two .content-column .inner-column .info .user .title,
+.service-list-three ul li a,
+.service-block-three .content .title,
+.steps-block .title,
+.steps-block .icon .number,
+.growth-section-two .growth-block .content-box .title,
+.feature-block .inner-box .title,
+.feature-block .inner-box .arry-btn,
+.contact-section .content-column .info .title,
+.contact-block .head .title,
+.blog-block-two .inner-box .content-box .title,
+.blog-block-two .inner-box .content-box .info li a,
+.faq-two-accordion .accordion .accordion-button::before,
+.header-style-three .main-menu .navigation li.dropdown .dropdown-btn,
+.header-style-three .main-box .outer-box .info-box .call-info a,
+.header-style-three .main-box .outer-box .info-box .con-btn,
+.banner-section-three .content-column .inner-column .btn-wrp .video-btn,
+.about-section-three .image-column .inner-column .info .user .title,
+.about-block-three .content-box .count-box,
+.service-block-two .inner-box .content-box .title,
+.service-block-two .inner-box .content-box .btn-two-rounded,
+.objective-block .title,
+.objective-block .outer-box .item h5,
+.objective-block .info .text,
+.pricing-tab .nav .nav-item .nav-link,
+.pricing-block .inner-box .head .title,
+.team-block-three .inner-box .content-box .title,
+.blog-block-three .inner-box .content-box .content .title,
+.blog-block-three .inner-box .content-box .content .sub-title,
+.footer-cta .btn-wrp .cta-btn,
+.pricing-block.active .inner-box .tag,
+.about-section-four .content-column .inner-column .content-box .item .sub-title,
+.about-section-four .content-column .inner-column .number,
+.header-style-four .sticky-header .main-menu .navigation li.dropdown .dropdown-btn,
+.service-section-four .content-column .inner-column .info ul li .title,
+.service-block-four .acc .acc-item .acc-btn .content-box .title,
+.service-block-four .acc .acc-item .acc-btn .number,
+.funfact-block-four .sub-title,
+.process-section-four .process-tab .nav.nav-tabs .nav-link.active,
+.process-section-four .content-column .inner-column .list ul li,
+.pricing-block-two .inner-box .list li,
+.pricing-block-two .inner-box .bottom .title,
+.pricing-block-two.active .inner-box .btn-one-rounded,
+.header-style-five .outer-box .search-btn,
+.header-style-five .outer-box .info-box .call-info i,
+.header-style-five .outer-box .info-box .call-info a,
+.client-section-three .outer-box .title-box .title,
+.team-five__item .content .title,
+.testimonial-block-five .inner-box .content-box .info-box .user-info .name,
+.header-style-six .sticky-header .main-menu .navigation li .dropdown-btn,
+.service-block-two .inner-box:hover .content-box .title,
+.feature-two__item .feature__content .title,
+.pricing-wrapper-six .pricing-card-item .pricing-left-ber .pricing-header .plan,
+.pricing-wrapper-six .pricing-card-item .pricing-left-ber .pricing-header .price,
+.pricing-wrapper-six .pricing-card-item .pricing-right-ber .pricing-list li,
+.pricing-wrapper-six .pricing-card-item .pricing-right-ber .pricing-list li i,
+.testimonial-section-three.home6-style .sec-title .testimonial-prev-three:hover,
+.testimonial-section-three.home6-style .sec-title .testimonial-next-three:hover,
+.footer-style-three.at-home6 .footer-cta .title,
+.pricing-wrapper-six .pricing-card-item:hover .btn-two-rounded,
+.about-section-seven .content-column .inner-column .list ul li,
+.choose-section-seven .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active,
+.choose-section-seven .content-column .inner-column .content-box .list ul li,
+.team-block-four .inner-box .content-box .title,
+.testimonial-block-six .info .title {
+  color: #fff !important;
+}
+
+.feature-two__item .feature__content .title:before {
+  background-color: #fff;
+}
+
+.service-block-two .inner-box:hover .content-box .text,
+.footer-cta .text,
+.pricing-block-two.active .inner-box .list li::after {
+  color: #051B05;
+}
+
+.choose-section-seven .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active {
+  border-bottom-color: var(--theme-color-white);
+}
+
+.header-style-two .main-box .outer-box .info-box .btn-one-light,
+.about-block-three .content-box::after {
+  border-color: #fff;
+}
+
+.blog-block .inner-box .content-box .info li svg path,
+.blog-block .inner-box .content-box .arry-btn svg path,
+.blog-block-two .inner-box .content-box .info li svg path,
+.feature-two__text .icon svg path,
+.professional__image .content .icon svg path,
+.pricing-wrapper-six .pricing-card-item .pricing-left-ber .pricing-icon svg path {
+  fill: var(--theme-color-white);
+}
+
+.header-style-one .outer-box .info-box .call-info .title,
+.header-style-three .main-box .outer-box .info-box .call-info .title,
+.pricing-wrapper-six .pricing-card-item .pricing-right-ber .pricing-list li.disable,
+.pricing-wrapper-six .pricing-card-item .pricing-right-ber .pricing-list li i {
+  color: rgba(var(--theme-color-white-rgb), 0.6) !important;
+}
+
+.btn-one-light {
+  border: 1px solid rgba(var(--theme-color-white-rgb), 0.6);
+}
+
+.progress .bar {
+  background-color: rgba(var(--theme-color-white-rgb), 0.5);
+}
+
+.objective-section .content-column .inner-column .progress .bar {
+  background-color: rgba(var(--theme-color-white-rgb), 0.2);
+}
+
+.brand-section .sec-title::after,
+.banner-section-three .content-column .inner-column .btn-wrp .video-btn,
+.pricing-tab .nav,
+.service-block-four .acc .acc-item.active,
+.pricing-block-two .inner-box .top .title,
+.header-style-five .outer-box .info-box .call-info i,
+.client-section-three .outer-box .title-box:before,
+.feature-two__item .feature__content .title:after,
+.professional__image .content .icon,
+.pricing-wrapper-six .pricing-card-item .pricing-left-ber .pricing-icon::after {
+  background-color: rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.choose-section .content-column .inner-column .choose-tab .nav {
+  border-bottom: 2px solid rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.processing-section .outer-box,
+.objective-block .outer-box .item:not(:first-child),
+.process-section-four .process-tab .nav.nav-tabs {
+  border-color: 1px dashed rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.testimonial-slider .swiper-arry button,
+.faq-two-accordion .accordion .accordion-item,
+.contact-block form .input input,
+.contact-block form textarea,
+.contact-block form .nice-select,
+.header-style-three .main-box .nav-outer .nav,
+.contact-block-four .input-feild input,
+.contact-block-four .input-feild textarea,
+.contact-block-four .nice-select,
+.client-section-three .outer-box {
+  border: 1px solid rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.processing-block .inner-box,
+.pricing-wrapper-six .pricing-card-item .pricing-left-ber {
+  border-right: 1px solid rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.funfact-block-four {
+  border-left: 1px solid rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.header-style-two,
+.brand-section-two .outer-box,
+.pricing-block .inner-box .head,
+.objective-section .content-column .inner-column .nav.nav-tabs,
+.service-block-four .acc .acc-item:not(:last-child),
+.header-style-five,
+.choose-section-seven .content-column .inner-column .choose-tab .nav {
+  border-bottom: 1px solid rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.blog-block-three .inner-box .content-box .info,
+.testimonial-block-five .inner-box .content-box .info-box,
+.testimonial-block-six .info .title {
+  border-top: 1px solid rgba(var(--theme-color-white-rgb), 0.1);
+}
+
+.testimonial-slider .swiper-arry button,
+.faq-two-accordion .accordion .accordion-item,
+.contact-block form .input input,
+.contact-block form textarea,
+.contact-block form .nice-select,
+.header-style-three .main-box .nav-outer .nav,
+.about-block-three .content-box::after,
+.objective-block .info .icon,
+.contact-block-four .input-feild input,
+.contact-block-four .input-feild textarea,
+.contact-block-four .nice-select {
+  background-color: transparent;
+}
+
+.header-style-seven .main-menu {
+  border-color: transparent;
+}
+
+.footer-style-one .footer-widget .input-feild input,
+.main-footer .footer-widget.about-widget .input-feild input {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.processing-block .inner-box .number {
+  -webkit-text-stroke: 1px var(--theme-color-white);
+}
+
+.processing-section .sec-text a,
+.service-block-three .content .list li i,
+.header-style-three .header-top .top-left .info-list i,
+.header-style-three .main-menu .navigation > li:hover > a,
+.objective-block .info .text a,
+.service-section-four .content-column .inner-column .info ul li i,
+.process-section-four .content-column .inner-column .list ul li i,
+.about-section-seven .content-column .inner-column .list ul li i,
+.choose-section-seven .content-column .inner-column .content-box .list ul li i {
+  color: var(--theme-color1) !important;
+}
+
+.feature-two__text .icon,
+.testimonial-section-three.home6-style .sec-title .testimonial-prev-three:hover,
+.testimonial-section-three.home6-style .sec-title .testimonial-next-three:hover,
+.team-section-three.home6-style .team-block-three .inner-box .image-box .socials,
+.pricing-wrapper-six .pricing-card-item:hover .btn-two-rounded,
+.pricing-wrapper-six .pricing-card-item:hover .btn-two-rounded::after {
+  background-color: var(--theme-color6);
+}
+
+.objective-block .info .icon {
+  border-color: var(--theme-color1);
+}
+
+.process-section-four .process-tab .nav.nav-tabs .nav-link.active {
+  border-bottom-color: var(--theme-color1);
+}
+
+.growth-block .pie-graph .inner-text,
+.testimonial-slider .swiper-arry button:hover,
+.blog-block .inner-box:hover .content-box,
+.swiper-dot .swiper-pagination-bullet.swiper-pagination-bullet-active::before,
+.case-block .inner-box:hover .arry-btn::after,
+.testimonial-section-two .testimonial-slider-two .testimonial-prev-two:hover,
+.testimonial-section-two .testimonial-slider-two .testimonial-next-two:hover,
+.steps-block:hover .icon .number,
+.gellery-block .click-btn,
+.team-block-two .inner-box .image-box .socials ul li a,
+.contact-section .content-column .info .icon,
+.objective-section .content-column .inner-column .nav.nav-tabs .nav-item .nav-link.active,
+.pricing-block.active .inner-box,
+.testimonial-section-three .sec-title .testimonial-prev-three:hover,
+.testimonial-section-three .sec-title .testimonial-next-three:hover,
+.process-section-four .process-tab .nav.nav-tabs .nav-link.active .number,
+.pricing-block-two.active .inner-box {
+  background-color: var(--theme-color1);
+}
+
+.testimonial-slider .swiper-arry button:hover,
+.process-section-four .process-tab .nav.nav-tabs .nav-link.active .number {
+  color: #000000 !important;
+}
+
+.choose-section .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active {
+  border-color: var(--theme-color1);
+}
+
+.service-block-two .inner-box,
+.service-block-four .acc {
+  border: none;
+}
+
+.about-block .inner-box .icon svg path,
+.service-list-three ul li a svg path,
+.feature-block .inner-box .icon-box svg path,
+.pricing-block .inner-box .head .icon svg path,
+.objective-block .info .icon svg path,
+.service-block-four .acc .acc-item .acc-btn span.icon svg path {
+  fill: var(--theme-color1);
+}
+
+.blog-block .inner-box:hover .content-box .title,
+.blog-block .inner-box:hover .content-box,
+.blog-block .inner-box:hover .content-box .arry-btn,
+.blog-block .inner-box:hover .content-box .info li a,
+.about-section-two .image-column .inner-column .image .info2 .title,
+.service-list-three ul li a:hover,
+.steps-block:hover .icon .number,
+.gellery-block .click-btn,
+.feature-block .inner-box:hover .title,
+.feature-block .inner-box:hover .arry-btn,
+.team-block-two .inner-box .image-box .socials ul li a,
+.objective-section .content-column .inner-column .nav.nav-tabs .nav-item .nav-link.active,
+.pricing-block.active .inner-box .head .title,
+.pricing-block.active .inner-box .head .sub-title,
+.pricing-block.active .inner-box .list li,
+.testimonial-section-three .sec-title .testimonial-prev-three:hover,
+.testimonial-section-three .sec-title .testimonial-next-three:hover,
+.footer-style-three .footer-cta .title,
+.pricing-block-two.active .inner-box .list li,
+.pricing-block-two.active .inner-box .bottom .title,
+.footer-style-four .footer-bottom .language .nice-select::before {
+  color: var(--headings-color) !important;
+}
+
+.pricing-block-two.active .inner-box .bottom .title span,
+.pricing-block-two.active .inner-box .top .sub-title,
+.pricing-block-two.active .inner-box .bottom .sub-title {
+  color: #4B5563 !important;
+}
+
+.blog-block .inner-box:hover .content-box .arry-btn svg path,
+.blog-block .inner-box:hover .content-box .info li svg path,
+.service-list-three ul li a:hover svg path,
+.feature-block .inner-box:hover .icon-box svg path,
+.contact-section .content-column .info .icon svg path,
+.pricing-block.active .inner-box .head .icon svg path,
+.pricing-block.active .inner-box .list li svg path {
+  fill: var(--headings-color) !important;
+}
+
+.brand-block a img,
+.brand-section-two .brand-block a img {
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
+}
+
+.about-section .content-column .inner-column .info .user .sig,
+.about-section-four .content-column .inner-column .info .user .sig,
+.client-block-three .image img,
+.about-wrapper-4 .about-content .info .user .sig,
+.testimonial-block-five .inner-box .content-box .logo img,
+.about-section-seven .content-column .inner-column .info .user .sig {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.team-section-three .team-three-text img {
+  opacity: 0.1;
+}
+
+.banner-section-six .banner-slider .info-column .info-box .inner-box:after {
+  opacity: 0.5;
+}
+
+.service-block-four .acc .acc-item.active {
+  border-radius: 0;
+}
