@@ -17,7 +17,7 @@
   <style>
     .team-block {
       background: #ffffff;
-      border-radius: 24px;
+      border-radius: 0;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.1);
       border: 1px solid #e3efeb;
@@ -71,6 +71,50 @@
       font-size: 12px;
     }
     .team-block .lower-content p { margin: 0; color: #5e6a74; font-size: 14px; line-height: 1.6; }
+
+    /* Tabs Styling */
+    .governance-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 50px;
+      border-bottom: 2px solid #e3efeb;
+      padding-bottom: 0;
+      justify-content: center;
+    }
+    .governance-tabs .tab-btn {
+      padding: 15px 25px;
+      border: none;
+      background: transparent;
+      color: #595b62;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+      bottom: -2px;
+    }
+    .governance-tabs .tab-btn:hover {
+      color: var(--theme-color2);
+    }
+    .governance-tabs .tab-btn.active {
+      color: var(--theme-color2);
+      border-bottom-color: var(--theme-color2);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 
@@ -85,15 +129,17 @@
           <div class="top-left">
             <ul class="info-list">
               <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@accssacco.co.ke">info@accssacco.co.ke</a></li>
-              <li><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</li>
+              <li><i class="fa-solid fa-location-dot"></i> General Kago Road Next to Mount Kenya University, Thika, Kenya</li>
             </ul>
           </div>
           <div class="top-right">
-            <ul class="useful-links">
-              <li><a href="about.html">About</a></li>
-              <li><a href="downloads.html">Downloads</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="contact.html">Contact</a></li>
+            <a href="tel:+254712766276" class="phone-link"><i class="fa-solid fa-phone"></i> +254 712 766276</a>
+            <ul class="top-social-icon">
+              <li><a href="https://web.facebook.com/accsaccoltd" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              <li><a href="https://wa.me/254712766276" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
             </ul>
           </div>
         </div>
@@ -113,17 +159,27 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="loans.html">Loans</a></li>
               <li><a href="savings.html">Savings</a></li>
+              <li><a href="blog.html">News</a></li>
               <li class="dropdown"><a href="about.html">About</a>
                 <ul>
-                  <li><a href="about.html#board">Board of Directors</a></li>
-                  <li><a href="about.html#management">Management Staff</a></li>
-                  <li><a href="about.html#supervisory">Supervisory Staff</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="about.html#mission">Mission</a></li>
+                  <li><a href="about.html#vision">Vision</a></li>
+                  <li><a href="about.html#why-choose-us">Why Choose Us</a></li>
+                  <li class="dropdown-submenu">
+                    <a href="governance.html">Governance</a>
+                    <ul>
+                      <li><a href="governance.html#board-members">Board Members</a></li>
+                      <li><a href="governance.html#executive-committee">Executive Committee</a></li>
+                      <li><a href="governance.html#credit-committee">Credit Committee</a></li>
+                      <li><a href="governance.html#supervisory-committee">Supervisory Committee</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
               <li><a href="downloads.html">Downloads</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="contact.html">Contact</a></li>
-              <li class="current"><a href="governance.html">Governance</a></li>
             </ul>
           </nav>
         </div>
@@ -168,15 +224,29 @@
       </div>
     </section>
 
-    <section class="team-section pt-120 pb-120">
+    <!-- Governance Tabs Navigation -->
+    <section class="pt-80 pb-0">
       <div class="container">
-        <div class="sec-title center mb-60">
-          <h6 class="sub-title">Our Governance Team</h6>
-          <h2 class="title">Board Members & Senior Governance</h2>
-          <p class="text">ACC&S SACCO is led by a diverse board of governance members to uphold integrity, oversight, and service each year.</p>
+        <div class="governance-tabs" role="tablist">
+          <button class="tab-btn active" data-tab="board-members" role="tab">Board Members</button>
+          <button class="tab-btn" data-tab="executive-committee" role="tab">Executive Committee</button>
+          <button class="tab-btn" data-tab="credit-committee" role="tab">Credit Committee</button>
+          <button class="tab-btn" data-tab="supervisory-committee" role="tab">Supervisory Committee</button>
         </div>
+      </div>
+    </section>
 
-        <div class="row g-4">
+    <!-- Board Members Tab -->
+    <section class="tab-content active" id="board-members">
+      <div class="team-section pt-120 pb-120">
+        <div class="container">
+          <div class="sec-title center mb-60">
+            <h6 class="sub-title">Our Governance Team</h6>
+            <h2 class="title">Board Members</h2>
+            <p class="text">ACC&S SACCO is led by a diverse board of governance members to uphold integrity, oversight, and service each year.</p>
+          </div>
+
+          <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <div class="team-block">
               <div class="inner-box">
@@ -195,39 +265,11 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/Geoffrey-Kangethe-Mwangi-1024x1024.jpg" alt="Geoffrey Kangethe Mwangi">
+                  <img src="/images/govt/Samuel-Karanja-Kamau.jpg" alt="Samuel Karanja Kamau">
                 </div>
                 <div class="lower-content">
-                  <h5>Geoffrey Kangethe Mwangi</h5>
+                  <h5>Samuel Karanja Kamau</h5>
                   <span>Vice Chairperson</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="team-block">
-              <div class="inner-box">
-                <div class="image">
-                  <img src="/images/govt/Nahashon-Kahara-Njihia-1024x1024.jpg" alt="Nahashon Kahara Njihia">
-                </div>
-                <div class="lower-content">
-                  <h5>Nahashon Kahara Njihia</h5>
-                  <span>Treasurer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="team-block">
-              <div class="inner-box">
-                <div class="image">
-                  <img src="/images/govt/Nancy-Warau-Mwangi-1024x1024.jpg" alt="Nancy Warau Mwangi">
-                </div>
-                <div class="lower-content">
-                  <h5>Nancy Warau Mwangi</h5>
-                  <span>Secretary</span>
                 </div>
               </div>
             </div>
@@ -241,7 +283,7 @@
                 </div>
                 <div class="lower-content">
                   <h5>John Nganga Thuku</h5>
-                  <span>Board Member</span>
+                  <span>Secretary</span>
                 </div>
               </div>
             </div>
@@ -251,11 +293,11 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/Joseph-Karanja-Maara.jpg" alt="Joseph Karanja Maara">
+                  <img src="/images/govt/David-Mwangi-Thiongo.jpg" alt="David Mwangi Thiong'o">
                 </div>
                 <div class="lower-content">
-                  <h5>Joseph Karanja Maara</h5>
-                  <span>Board Member</span>
+                  <h5>David Mwangi Thiong'o</h5>
+                  <span>Treasurer</span>
                 </div>
               </div>
             </div>
@@ -269,6 +311,34 @@
                 </div>
                 <div class="lower-content">
                   <h5>Lizzie Waitherero Njeri</h5>
+                  <span>Vice Secretary</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Emma-Nyambura-Kamau.jpg" alt="Emma Nyambura Kamau">
+                </div>
+                <div class="lower-content">
+                  <h5>Emma Nyambura Kamau</h5>
+                  <span>Board Member</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Nancy-Warau-Mwangi-1024x1024.jpg" alt="Nancy Warau Mwangi">
+                </div>
+                <div class="lower-content">
+                  <h5>Nancy Warau Mwangi</h5>
                   <span>Board Member</span>
                 </div>
               </div>
@@ -293,10 +363,24 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/Samuel-Karanja-Kamau.jpg" alt="Samuel Karanja Kamau">
+                  <img src="/images/govt/Nahashon-Kahara-Njihia-1024x1024.jpg" alt="Nahashon Kahara Njihia">
                 </div>
                 <div class="lower-content">
-                  <h5>Samuel Karanja Kamau</h5>
+                  <h5>Nahashon Kahara Njihia</h5>
+                  <span>Board Member</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Patrick-Maina-Kimani.jpg" alt="Patrick Maina Kimani">
+                </div>
+                <div class="lower-content">
+                  <h5>Patrick Maina Kimani</h5>
                   <span>Board Member</span>
                 </div>
               </div>
@@ -306,12 +390,14 @@
         </div>
       </div>
     </section>
+    </section>
 
-    <!-- Executive Committee -->
-    <section class="team-section pt-100 pb-80" id="executive-committee">
-      <div class="container">
-        <div class="sec-title center mb-50">
-          <h6 class="sub-title">Executive Committee</h6>
+    <!-- Executive Committee Tab -->
+    <section class="tab-content" id="executive-committee">
+      <div class="team-section pt-120 pb-120">
+        <div class="container">
+          <div class="sec-title center mb-50">
+            <h6 class="sub-title">Executive Committee</h6>
           <h2 class="title">Executive Leadership Team</h2>
           <p class="text">The Executive Committee delivers high-level strategic oversight and ensures the organisation follows SACCO policy and governance standards.</p>
         </div>
@@ -321,11 +407,11 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/executive-1.jpg" alt="Executive Member 1">
+                  <img src="/images/govt/Elijah-Karanu-Wainaina-1024x1024.jpg" alt="Elijah Karanu Wainaina">
                 </div>
                 <div class="lower-content">
-                  <h5>Mary Wanjiru</h5>
-                  <span>Executive Chairperson</span>
+                  <h5>Elijah Karanu Wainaina</h5>
+                  <span>Chairman</span>
                 </div>
               </div>
             </div>
@@ -335,11 +421,11 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/executive-2.jpg" alt="Executive Member 2">
+                  <img src="/images/govt/Samuel-Karanja-Kamau.jpg" alt="Samuel Karanja Kamau">
                 </div>
                 <div class="lower-content">
-                  <h5>Paul Otieno</h5>
-                  <span>Executive Secretary</span>
+                  <h5>Samuel Karanja Kamau</h5>
+                  <span>Vice Chairman</span>
                 </div>
               </div>
             </div>
@@ -349,11 +435,39 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/executive-3.jpg" alt="Executive Member 3">
+                  <img src="/images/govt/John-Nganga-Thuku.jpg" alt="John Nganga Thuku">
                 </div>
                 <div class="lower-content">
-                  <h5>Sophia Njeri</h5>
-                  <span>Executive Finance Lead</span>
+                  <h5>John Nganga Thuku</h5>
+                  <span>Secretary</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/David-Mwangi-Thiongo.jpg" alt="David Mwangi Thiong'o">
+                </div>
+                <div class="lower-content">
+                  <h5>David Mwangi Thiong'o</h5>
+                  <span>Treasurer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Lizzie-Waitherero-Njeri.jpg" alt="Lizzie Waitherero Njeri">
+                </div>
+                <div class="lower-content">
+                  <h5>Lizzie Waitherero Njeri</h5>
+                  <span>Vice Secretary</span>
                 </div>
               </div>
             </div>
@@ -361,26 +475,141 @@
         </div>
       </div>
     </section>
+    </section>
 
-    <!-- Credit Committee -->
-    <section class="team-section pt-100 pb-80" id="credit-committee">
-      <div class="container">
-        <div class="sec-title center mb-50">
-          <h6 class="sub-title">Credit Committee</h6>
-          <h2 class="title">Credit Review & Risk Committee</h2>
-          <p class="text">The Credit Committee vets loan proposals, monitors credit risk, and approves credit policy in line with SASRA guidelines.</p>
+    <!-- Credit Committee Tab -->
+    <section class="tab-content" id="credit-committee">
+      <div class="team-section pt-120 pb-120">
+        <div class="container">
+          <div class="sec-title center mb-50">
+            <h6 class="sub-title">Credit Committee</h6>
+            <h2 class="title">Credit Review & Risk Committee</h2>
+            <p class="text">The Credit Committee vets loan proposals, monitors credit risk, and approves credit policy in line with SASRA guidelines.</p>
+          </div>
+
+          <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Elijah-Karanu-Wainaina-1024x1024.jpg" alt="Elijah Karanu Wainaina">
+                </div>
+                <div class="lower-content">
+                  <h5>Elijah Karanu Wainaina</h5>
+                  <span>Chairman</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/John-Nganga-Thuku.jpg" alt="John Nganga Thuku">
+                </div>
+                <div class="lower-content">
+                  <h5>John Nganga Thuku</h5>
+                  <span>Secretary</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Nancy-Warau-Mwangi-1024x1024.jpg" alt="Nancy Warau Mwangi">
+                </div>
+                <div class="lower-content">
+                  <h5>Nancy Warau Mwangi</h5>
+                  <span>Member</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Samuel-Karanja-Kamau.jpg" alt="Samuel Karanja Kamau">
+                </div>
+                <div class="lower-content">
+                  <h5>Samuel Karanja Kamau</h5>
+                  <span>Vice Chairman</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/David-Mwangi-Thiongo.jpg" alt="David Mwangi Thiong'o">
+                </div>
+                <div class="lower-content">
+                  <h5>David Mwangi Thiong'o</h5>
+                  <span>Treasurer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Emma-Nyambura-Kamau.jpg" alt="Emma Nyambura Kamau">
+                </div>
+                <div class="lower-content">
+                  <h5>Emma Nyambura Kamau</h5>
+                  <span>Member</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="team-block">
+              <div class="inner-box">
+                <div class="image">
+                  <img src="/images/govt/Lizzie-Waitherero-Njeri.jpg" alt="Lizzie Waitherero Njeri">
+                </div>
+                <div class="lower-content">
+                  <h5>Lizzie Waitherero Njeri</h5>
+                  <span>Member</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+    </section>
 
-        <div class="row g-4">
+    <!-- Supervisory Committee Tab -->
+    <section class="tab-content" id="supervisory-committee">
+      <div class="team-section pt-120 pb-120">
+        <div class="container">
+          <div class="sec-title center mb-50">
+            <h6 class="sub-title">Supervisory Committee</h6>
+            <h2 class="title">Supervisory Oversight Team</h2>
+            <p class="text">The Supervisory Committee provides independent oversight of the SACCO's operations, financial reporting, and internal controls.</p>
+          </div>
+
+          <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/credit-1.jpg" alt="Credit Member 1">
+                  <img src="/images/govt/Patrick-Maina-Kimani.jpg" alt="Patrick Maina Kimani">
                 </div>
                 <div class="lower-content">
-                  <h5>Josephine Mwende</h5>
-                  <span>Credit Chairperson</span>
+                  <h5>Patrick Maina Kimani</h5>
+                  <span>Chairman</span>
                 </div>
               </div>
             </div>
@@ -390,11 +619,11 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/credit-2.jpg" alt="Credit Member 2">
+                  <img src="/images/govt/Nahashon-Kahara-Njihia-1024x1024.jpg" alt="Nahashon Kahara Njihia">
                 </div>
                 <div class="lower-content">
-                  <h5>David Kiprono</h5>
-                  <span>Credit Risk Analyst</span>
+                  <h5>Nahashon Kahara Njihia</h5>
+                  <span>Secretary</span>
                 </div>
               </div>
             </div>
@@ -404,11 +633,11 @@
             <div class="team-block">
               <div class="inner-box">
                 <div class="image">
-                  <img src="/images/govt/credit-3.jpg" alt="Credit Member 3">
+                  <img src="/images/govt/Rose-Nyambura-Kamau.jpg" alt="Rose Nyambura Kamau">
                 </div>
                 <div class="lower-content">
-                  <h5>Esther Kaberia</h5>
-                  <span>Loan Compliance Lead</span>
+                  <h5>Rose Nyambura Kamau</h5>
+                  <span>Member</span>
                 </div>
               </div>
             </div>
@@ -435,7 +664,7 @@
       </div>
     </footer>
 
-    <a href="https://wa.me/254712345678" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/254712766276" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
   </div>
 
@@ -461,6 +690,28 @@
   <script src="/js/splitType.js"></script>
   <script src="/js/script-gsap.js"></script>
   <script src="/js/script.js"></script>
+
+  <!-- Governance Tabs Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button and corresponding content
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
