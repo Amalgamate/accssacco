@@ -12,6 +12,12 @@ export default defineConfig({
         savings: 'savings.html',
         downloads: 'downloads.html',
         contact: 'contact.html',
+        blog: 'blog.html',
+        gallery: 'gallery.html',
+        governance: 'governance.html',
+        board: 'board.html',
+        management: 'management.html',
+        supervisory: 'supervisory.html',
       }
     }
   }
