@@ -2,12 +2,12 @@
    ACC&S SACCO LTD — Global Styles
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --green-deep:   #0a4a2e;
-  --green-mid:    #1a6e44;
-  --green-light:  #2d9e64;
+  --green-deep:   #0a1a7a;
+  --green-mid:    #1a3e9e;
+  --green-light:  #3d5ecb;
   --gold:         #c8922a;
   --gold-light:   #f0b84a;
   --cream:        #faf8f3;
@@ -21,8 +21,8 @@
   --radius-sm:    6px;
   --radius-md:    12px;
   --radius-lg:    20px;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-body:    'Poppins', sans-serif;
   --nav-h:        72px;
 }
 
@@ -198,7 +198,7 @@ section { padding: 5rem 5%; }
 
 .card-icon {
   width: 48px; height: 48px;
-  background: #e8f5ef;
+  background: #e8ecf5;
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1.25rem;
@@ -299,7 +299,7 @@ section { padding: 5rem 5%; }
 }
 .contact-detail-icon {
   width: 40px; height: 40px; flex-shrink: 0;
-  background: #e8f5ef; border-radius: 8px;
+  background: #e8ecf5; border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 18px;
 }
@@ -347,7 +347,7 @@ textarea { resize: vertical; min-height: 120px; }
 
 /* ---- Pre-footer CTA band ---- */
 .footer-cta-band {
-  background: #071a10;
+  background: #0e24a3;
   padding: 52px 0;
   position: relative;
   overflow: hidden;
@@ -568,8 +568,8 @@ textarea { resize: vertical; min-height: 120px; }
   background-image: 
     linear-gradient(135deg, transparent 48%, #E6A817 48%, #E6A817 52%, transparent 52%),
     linear-gradient(45deg, transparent 48%, #E6A817 48%, #E6A817 52%, transparent 52%),
-    linear-gradient(135deg, transparent 48%, #0a7a66 48%, #0a7a66 52%, transparent 52%),
-    linear-gradient(45deg, transparent 48%, #0a7a66 48%, #0a7a66 52%, transparent 52%);
+    linear-gradient(135deg, transparent 48%, #0e24a3 48%, #0e24a3 52%, transparent 52%),
+    linear-gradient(45deg, transparent 48%, #0e24a3 48%, #0e24a3 52%, transparent 52%);
   background-size: auto, auto, auto, auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -614,7 +614,7 @@ textarea { resize: vertical; min-height: 120px; }
 
 .col-lg-4:nth-child(1) > div > div {
   animation-delay: 0s;
-  background: linear-gradient(135deg, #f0f8f5 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f0f2f8 0%, #ffffff 100%);
 }
 
 .col-lg-4:nth-child(2) > div > div {
@@ -627,18 +627,18 @@ textarea { resize: vertical; min-height: 120px; }
 
 .col-lg-4:nth-child(3) > div > div {
   animation-delay: 0.6s;
-  background: linear-gradient(135deg, #f0f8f5 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f0f2f8 0%, #ffffff 100%);
 }
 
 .col-lg-4:nth-child(4) > div > div {
   animation-delay: 0.9s;
-  background: linear-gradient(135deg, #f0f8f5 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f0f2f8 0%, #ffffff 100%);
 }
 
 .col-lg-4 > div > div:hover {
   transform: scale(1.15);
   box-shadow: 0 20px 60px rgba(230, 168, 23, 0.3);
-  border-color: #0a7a66;
+  border-color: #0e24a3;
 }
 
 .col-lg-4:nth-child(2) > div > div:hover {
@@ -648,7 +648,7 @@ textarea { resize: vertical; min-height: 120px; }
 /* Node content styling */
 .col-lg-4 > div > div strong {
   display: block;
-  color: #0a7a66;
+  color: #0e24a3;
   font-size: 14px;
   font-weight: 700;
   margin-top: 0.5rem;
