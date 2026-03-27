@@ -1,4 +1,4 @@
-/* Consultez | Business Consulting HTML Template
+﻿/* Consultez | Business Consulting HTML Template
 
 Template Name: Consultez
 Version: 1.0.0
@@ -47,7 +47,7 @@ License: copyright commercial
   --theme-color-light: #ffffff;
   --theme-color-white: #ffffff;
   --theme-color-white-rgb: 255, 255, 255;
-  --theme-color-dark: #1a3841;
+  --theme-color-dark: #1a225c;
   --theme-color-gray: #f1f1f2;
   --theme-color-gray2: #f8f5f2;
   --theme-color-light-green: #F0F7F3;
@@ -56,21 +56,21 @@ License: copyright commercial
   --theme-color-silver: #C4C4C4;
   --theme-color1: #E6A817;
   --theme-color1-rgb: 230, 168, 23;
-  --theme-color2: #1a4137;
-  --theme-color2-rgb: 26, 65, 55;
-  --theme-color3: #102930;
-  --theme-color3-rgb: 16, 41, 48;
-  --theme-color4: #163839;
-  --theme-color4-rgb: 22, 56, 57;
-  --theme-color5: #001726;
+  --theme-color2: #1a3e9e;
+  --theme-color2-rgb: 26, 62, 158;
+  --theme-color3: #101a4a;
+  --theme-color3-rgb: 16, 26, 74;
+  --theme-color4: #16245c;
+  --theme-color4-rgb: 22, 36, 92;
+  --theme-color5: #000c26;
   --theme-color5-rgb: 0, 23, 38;
   --theme-color6: #E34B1B;
   --theme-color6-rgb: 227, 75, 27;
-  --theme-color7: #063232;
-  --theme-color7-rgb: 6, 50, 50;
+  --theme-color7: #06184a;
+  --theme-color7-rgb: 6, 24, 74;
   --theme-color8: #B4E717;
   --theme-color9: #EDC701;
-  --theme-color10: #122F2A;
+  --theme-color10: #121852;
   --theme-color11: #595B62;
   --bg-theme-color1: var(--theme-color1);
   --bg-theme-color2: var(--theme-color2);
@@ -80,7 +80,7 @@ License: copyright commercial
   --text-color: #595b62;
   --text-color2: #636776;
   --text-color3: #6B7280;
-  --headings-color: #051b05;
+  --headings-color: #050a2b;
   --paragraph-light: var(--theme-color-silver);
   --review-color: #ffc737;
   --border-light: rgb(255 255 255 / 10%);
@@ -6418,7 +6418,7 @@ Section Title
 }
 .banner-section-six .banner-slider .banner-slide .outer-box .stroke-title {
   -webkit-background-clip: text;
-  -webkit-text-fill-color: linear-gradient(360deg, rgba(6, 50, 50, 0.2) 1.34%, rgba(250, 250, 250, 0) 100%);
+  -webkit-text-fill-color: linear-gradient(360deg, rgba(6, 24, 74, 0.2) 1.34%, rgba(250, 250, 250, 0) 100%);
   bottom: -70px;
   font-size: clamp(64px, 17.93vw, 287px);
   line-height: 1.04;
@@ -6792,7 +6792,7 @@ Section Title
   width: 100%;
   height: 100%;
   content: "";
-  background: linear-gradient(248.19deg, rgba(0, 0, 0, 0) 20.61%, #1A4137 81.3%);
+  background: linear-gradient(248.19deg, rgba(0, 0, 0, 0) 20.61%, #1a3e9e 81.3%);
 }
 .banner-section-seven .swiper-slide .outer-box .banner-shape-bg {
   position: absolute;
@@ -9224,7 +9224,7 @@ Section Title
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(99.2deg, #1a4137 32.71%, rgba(29, 67, 58, 0.99) 51.92%, rgba(34, 71, 61, 0.797132) 56.74%, rgba(64, 95, 87, 0.25) 77.85%, rgba(196, 196, 196, 0) 103.7%);
+  background: linear-gradient(99.2deg, #1a3e9e 32.71%, rgba(29, 67, 58, 0.99) 51.92%, rgba(34, 71, 61, 0.797132) 56.74%, rgba(64, 95, 87, 0.25) 77.85%, rgba(196, 196, 196, 0) 103.7%);
   content: "";
   z-index: -1;
 }
@@ -9671,7 +9671,7 @@ Section Title
   background-size: cover;
 }
 .growth-section.style-two::after {
-  background: radial-gradient(95.51% 264.21% at 92.63% 41.85%, rgba(0, 7, 31, 0) 0%, rgba(6, 50, 50, 0.98) 99.98%, rgba(6, 50, 50, 0.98) 99.99%);
+  background: radial-gradient(95.51% 264.21% at 92.63% 41.85%, rgba(0, 7, 31, 0) 0%, rgba(6, 24, 74, 0.98) 99.98%, rgba(6, 24, 74, 0.98) 99.99%);
 }
 .growth-section .sec-shape {
   position: absolute;
@@ -10052,8 +10052,8 @@ Section Title
   visibility: hidden;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(19.36%, rgba(0, 0, 0, 0)), color-stop(71.26%, #163839), to(#163839));
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 19.36%, #163839 71.26%, #163839 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(19.36%, rgba(0, 0, 0, 0)), color-stop(71.26%, #16245c), to(#16245c));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 19.36%, #16245c 71.26%, #16245c 100%);
   z-index: 0;
   content: "";
 }
@@ -10072,7 +10072,7 @@ Section Title
           transform: translate(-50%, -50%);
   text-align: center;
   font-size: 24px;
-  color: #163839;
+  color: #16245c;
   border-radius: 50%;
   z-index: 1;
   -webkit-transition: all 300ms ease;
@@ -10348,7 +10348,7 @@ Section Title
 }
 .choose-section .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active {
   background-color: transparent;
-  border-bottom: 2px solid #163839;
+  border-bottom: 2px solid #16245c;
   color: var(--headings-color);
 }
 @media (max-width: 575.98px) {
@@ -10646,7 +10646,7 @@ Section Title
 }
 .choose-section-seven .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active {
   background-color: transparent;
-  border-bottom: 2px solid #163839;
+  border-bottom: 2px solid #16245c;
   color: var(--headings-color);
 }
 @media (max-width: 575.98px) {
@@ -11136,7 +11136,7 @@ CONTACT Details
   width: 100%;
   height: 100%;
   content: "";
-  background-color: rgba(6, 50, 50, 0.8);
+  background-color: rgba(6, 24, 74, 0.8);
 }
 .contact-six__image {
   position: relative;
@@ -23097,7 +23097,7 @@ $grid-breakpoints: (
    ============================================ */
 
 .main-footer {
-  background: linear-gradient(135deg, #1a4137 0%, #0f2d2a 100%);
+  background: linear-gradient(135deg, #1a3e9e 0%, #0f2d2a 100%);
   color: rgba(255,255,255,0.75);
   padding: 0 !important;
   position: relative;
@@ -23149,7 +23149,7 @@ $grid-breakpoints: (
 .footer-brand__icon {
   width: 80px !important;
   height: 80px !important;
-  background: linear-gradient(135deg, #0f2d2a 0%, #1a4137 100%) !important;
+  background: linear-gradient(135deg, #0f2d2a 0%, #1a3e9e 100%) !important;
   border-radius: 12px !important;
   display: flex !important;
   align-items: center !important;
@@ -23207,7 +23207,7 @@ $grid-breakpoints: (
 .footer-social-btn:hover {
   background: #E6A817 !important;
   border-color: #E6A817 !important;
-  color: #1a4137 !important;
+  color: #1a3e9e !important;
   transform: translateY(-4px) !important;
   box-shadow: 0 8px 16px rgba(230,168,23,0.3) !important;
 }
@@ -23310,7 +23310,7 @@ $grid-breakpoints: (
 
 .footer-contact-list li:hover .fc-icon {
   background: #E6A817 !important;
-  color: #1a4137 !important;
+  color: #1a3e9e !important;
   transform: scale(1.1) !important;
 }
 

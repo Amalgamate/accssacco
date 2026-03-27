@@ -1,9 +1,9 @@
-:root {
-  --dark-color1: #063232;
+﻿:root {
+  --dark-color1: #06184a;
   --dark-color2: #0F2727;
   --dark-color2-rgb: 15, 39, 39;
   --dark-color3: #061419;
-  --dark-color4: #1A4137;
+  --dark-color4: #1a3e9e;
 }
 
 .bg-dark-1 {
@@ -396,7 +396,7 @@ strong,
 .service-block-two .inner-box:hover .content-box .text,
 .footer-cta .text,
 .pricing-block-two.active .inner-box .list li::after {
-  color: #051B05;
+  color: #050a2b;
 }
 
 .choose-section-seven .content-column .inner-column .choose-tab .nav .nav-item .nav-link.active {
