@@ -17,6 +17,9 @@
   <!-- Responsive -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -120,8 +123,11 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div style="border-radius: 18px; overflow: hidden;">
+            <div style="border-radius: 18px; overflow: hidden; margin-bottom: 30px;">
               <img src="/images/about/growth.png" alt="ACC&S SACCO Growth" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div class="text-center">
+              <p style="color: var(--theme-color2); font-size: 24px; font-weight: 800; font-style: italic; margin: 0;">"Empowering Dreams, Building Wealth"</p>
             </div>
           </div>
         </div>
@@ -209,16 +215,6 @@
       </div>
     </section>
 
-    <!-- Slogan Section -->
-    <section id="slogan" class="pt-80 pb-80" style="background: #0e24a3;">
-      <div class="container">
-        <div class="text-center">
-          <h6 style="color:#E6A817;font-weight:800;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px;">Our Slogan</h6>
-          <h2 class="text-white" style="font-size:42px;font-weight:900;margin-bottom:0;">Empowering Dreams, Building Wealth</h2>
-        </div>
-      </div>
-    </section>
-
     <!-- How to Become a Member Section -->
     <section class="membership-section pt-120 pb-120" style="background: #0e24a3;">
       <div class="container">
@@ -288,15 +284,17 @@
                   <p class="text-white-50" style="margin: 0; line-height: 1.6;">Obtain a copy of the bye-laws at Kshs 300 (Minimum monthly savings Kshs 1,000).</p>
                 </div>
               </div>
-            </div>
 
-            <div style="text-align: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-              <p class="text-white-50" style="margin-bottom: 25px; font-size: 15px;">Ready to start your membership journey?</p>
-              <a href="contact.html" style="display: inline-block; background: #E6A817; color: #0e24a3; padding: 15px 40px; border-radius: 4px; font-weight: 800; text-decoration: none; transition: all 0.3s ease;"
-                 onmouseover="this.style.background='#d4942a'; this.style.transform='scale(1.05)';"
-                 onmouseout="this.style.background='#E6A817'; this.style.transform='scale(1)';">
-                Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
-              </a>
+              <!-- CTA Block replacing empty 6th slot -->
+              <div style="display: flex; flex-direction: column; justify-content: center; padding: 15px 25px; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.15);">
+                <p class="text-white-50" style="margin-bottom: 15px; font-size: 15px; font-weight: 500;">Ready to start your membership journey?</p>
+                <a href="contact.html" style="display: inline-block; background: #E6A817; color: #0e24a3; padding: 12px 25px; border-radius: 4px; font-weight: 800; text-decoration: none; transition: all 0.3s ease; text-align: center;"
+                   onmouseover="this.style.background='#d4942a'; this.style.transform='scale(1.05)';"
+                   onmouseout="this.style.background='#E6A817'; this.style.transform='scale(1)';">
+                  Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
@@ -403,4 +401,5 @@
 </body>
 
 </html>
+
 
