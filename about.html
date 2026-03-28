@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,6 +17,9 @@
   <!-- Responsive -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -120,44 +123,58 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div style="background: #f8f9fa; padding: 50px; border-radius: 12px; border-left: 5px solid #E6A817;">
-              <h4 style="font-weight: 800; margin-bottom: 20px;">Built on Trust</h4>
-              <p>As a cooperative, we reinvest our surplus into better loan rates and member services. Our success is measured by member prosperity and community impact.</p>
+            <div style="border-radius: 18px; overflow: hidden; margin-bottom: 30px;">
+              <img src="/images/about/growth.png" alt="ACC&S SACCO Growth" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div class="text-center">
+              <p style="color: var(--theme-color2); font-size: 24px; font-weight: 800; font-style: italic; margin: 0;">"Empowering Dreams, Building Wealth"</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Mission Section -->
-    <section id="mission" class="pt-120 pb-120" style="background: #f7f9fb;">
+    <!-- Mission & Vision Section -->
+    <section id="mission-vision" class="pt-120 pb-120" style="background: #ffffff; border-top: 1px solid #f1f2f6;">
       <div class="container">
-        <div class="sec-title center mb-50">
-          <h6 class="sub-title">Our Mission</h6>
-          <h2 class="title" style="font-size: 36px; font-weight: 800;">Transforming Lives Through Financial Solutions</h2>
+        <div class="sec-title center mb-70">
+          <h6 class="sub-title">Who We Are</h6>
+          <h2 class="title" style="font-size: 36px; font-weight: 800;">Our Purpose & Direction</h2>
         </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p style="font-size: 20px; line-height: 1.9; color: #333; font-style: italic;">Transforming our members' lives through Provision of Competitive Financial Solutions for Sustainable Wealth Creation.</p>
+        <div class="row gx-5">
+          <!-- Mission -->
+          <div class="col-lg-6 col-md-12 mb-5 mb-lg-0" style="position: relative;">
+            <div class="d-flex align-items-start">
+              <div class="icon-box me-4" style="color: var(--theme-color2); font-size: 52px; line-height: 1;">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div>
+                <h4 id="mission" style="font-size: 28px; font-weight: 800; margin-bottom: 15px; color: var(--headings-color);">Our Mission</h4>
+                <p style="font-size: 19px; line-height: 1.8; color: #5e6a74; font-weight: 400; font-style: normal; margin: 0;">
+                  Transforming our members' lives through Provision of Competitive Financial Solutions for Sustainable Wealth Creation.
+                </p>
+              </div>
+            </div>
+            <!-- Vertical divider for desktop only -->
+            <div class="d-none d-lg-block" style="position: absolute; right: 0; top: 10%; height: 80%; width: 1px; background-color: #e5e7eb;"></div>
+          </div>
+          <!-- Vision -->
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex align-items-start">
+              <div class="icon-box me-4" style="color: var(--theme-color1); font-size: 52px; line-height: 1;">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div>
+                <h4 id="vision" style="font-size: 28px; font-weight: 800; margin-bottom: 15px; color: var(--headings-color);">Our Vision</h4>
+                <p style="font-size: 19px; line-height: 1.8; color: #5e6a74; font-weight: 400; font-style: normal; margin: 0;">
+                  To be the trusted leader in innovative financial solutions.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Vision Section -->
-    <section id="vision" class="pt-120 pb-120">
-      <div class="container">
-        <div class="sec-title center mb-50">
-          <h6 class="sub-title">Our Vision</h6>
-          <h2 class="title" style="font-size: 36px; font-weight: 800;">The Trusted Leader in Innovative Financial Solutions</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p style="font-size: 20px; line-height: 1.9; color: #333; font-style: italic;">To be the trusted leader in innovative financial solutions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Core Values Section -->
     <section id="core-values" class="pt-120 pb-120" style="background: #f7f9fb;">
       <div class="container">
@@ -167,43 +184,33 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div style="display: flex; flex-direction: column; gap: 18px;">
-              <div style="display:flex; align-items:center; gap:20px; background:#fff; padding:22px 30px; border-radius:12px; border-left:5px solid #0e24a3;">
-                <div style="width:48px;height:48px;background:#0e24a3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E6A817;font-size:22px;font-weight:900;flex-shrink:0;">G</div>
-                <div><strong style="font-size:18px;">G</strong> &ndash; God-Fearing</div>
+            <div style="display: flex; flex-direction: column;">
+              <div style="display:flex; align-items:center; gap:20px; padding: 18px 20px; border-bottom: 1px solid #e5e7eb;">
+                <div style="color: var(--theme-color2); font-size:28px; font-weight:900; width: 40px; text-align: center;">G</div>
+                <div style="font-size:19px; color: var(--headings-color); font-weight: 600;">God-Fearing</div>
               </div>
-              <div style="display:flex; align-items:center; gap:20px; background:#fff; padding:22px 30px; border-radius:12px; border-left:5px solid #0e24a3;">
-                <div style="width:48px;height:48px;background:#0e24a3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E6A817;font-size:22px;font-weight:900;flex-shrink:0;">R</div>
-                <div><strong style="font-size:18px;">R</strong> &ndash; Responsiveness to Customers</div>
+              <div style="display:flex; align-items:center; gap:20px; padding: 18px 20px; border-bottom: 1px solid #e5e7eb;">
+                <div style="color: var(--theme-color2); font-size:28px; font-weight:900; width: 40px; text-align: center;">R</div>
+                <div style="font-size:19px; color: var(--headings-color); font-weight: 600;">Responsiveness to Customers</div>
               </div>
-              <div style="display:flex; align-items:center; gap:20px; background:#fff; padding:22px 30px; border-radius:12px; border-left:5px solid #0e24a3;">
-                <div style="width:48px;height:48px;background:#0e24a3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E6A817;font-size:22px;font-weight:900;flex-shrink:0;">I</div>
-                <div><strong style="font-size:18px;">I</strong> &ndash; Integrity</div>
+              <div style="display:flex; align-items:center; gap:20px; padding: 18px 20px; border-bottom: 1px solid #e5e7eb;">
+                <div style="color: var(--theme-color2); font-size:28px; font-weight:900; width: 40px; text-align: center;">I</div>
+                <div style="font-size:19px; color: var(--headings-color); font-weight: 600;">Integrity</div>
               </div>
-              <div style="display:flex; align-items:center; gap:20px; background:#fff; padding:22px 30px; border-radius:12px; border-left:5px solid #0e24a3;">
-                <div style="width:48px;height:48px;background:#0e24a3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E6A817;font-size:22px;font-weight:900;flex-shrink:0;">P</div>
-                <div><strong style="font-size:18px;">P</strong> &ndash; Professionalism</div>
+              <div style="display:flex; align-items:center; gap:20px; padding: 18px 20px; border-bottom: 1px solid #e5e7eb;">
+                <div style="color: var(--theme-color2); font-size:28px; font-weight:900; width: 40px; text-align: center;">P</div>
+                <div style="font-size:19px; color: var(--headings-color); font-weight: 600;">Professionalism</div>
               </div>
-              <div style="display:flex; align-items:center; gap:20px; background:#fff; padding:22px 30px; border-radius:12px; border-left:5px solid #0e24a3;">
-                <div style="width:48px;height:48px;background:#0e24a3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E6A817;font-size:22px;font-weight:900;flex-shrink:0;">I</div>
-                <div><strong style="font-size:18px;">I</strong> &ndash; Innovation</div>
+              <div style="display:flex; align-items:center; gap:20px; padding: 18px 20px; border-bottom: 1px solid #e5e7eb;">
+                <div style="color: var(--theme-color2); font-size:28px; font-weight:900; width: 40px; text-align: center;">I</div>
+                <div style="font-size:19px; color: var(--headings-color); font-weight: 600;">Innovation</div>
               </div>
-              <div style="display:flex; align-items:center; gap:20px; background:#fff; padding:22px 30px; border-radius:12px; border-left:5px solid #0e24a3;">
-                <div style="width:48px;height:48px;background:#0e24a3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E6A817;font-size:22px;font-weight:900;flex-shrink:0;">T</div>
-                <div><strong style="font-size:18px;">T</strong> &ndash; Teamwork</div>
+              <div style="display:flex; align-items:center; gap:20px; padding: 18px 20px;">
+                <div style="color: var(--theme-color2); font-size:28px; font-weight:900; width: 40px; text-align: center;">T</div>
+                <div style="font-size:19px; color: var(--headings-color); font-weight: 600;">Teamwork</div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slogan Section -->
-    <section id="slogan" class="pt-80 pb-80" style="background: #0e24a3;">
-      <div class="container">
-        <div class="text-center">
-          <h6 style="color:#E6A817;font-weight:800;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px;">Our Slogan</h6>
-          <h2 class="text-white" style="font-size:42px;font-weight:900;margin-bottom:0;">Empowering Dreams, Building Wealth</h2>
         </div>
       </div>
     </section>
@@ -277,15 +284,17 @@
                   <p class="text-white-50" style="margin: 0; line-height: 1.6;">Obtain a copy of the bye-laws at Kshs 300 (Minimum monthly savings Kshs 1,000).</p>
                 </div>
               </div>
-            </div>
 
-            <div style="text-align: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-              <p class="text-white-50" style="margin-bottom: 25px; font-size: 15px;">Ready to start your membership journey?</p>
-              <a href="contact.html" style="display: inline-block; background: #E6A817; color: #0e24a3; padding: 15px 40px; border-radius: 4px; font-weight: 800; text-decoration: none; transition: all 0.3s ease;"
-                 onmouseover="this.style.background='#d4942a'; this.style.transform='scale(1.05)';"
-                 onmouseout="this.style.background='#E6A817'; this.style.transform='scale(1)';">
-                Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
-              </a>
+              <!-- CTA Block replacing empty 6th slot -->
+              <div style="display: flex; flex-direction: column; justify-content: center; padding: 15px 25px; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.15);">
+                <p class="text-white-50" style="margin-bottom: 15px; font-size: 15px; font-weight: 500;">Ready to start your membership journey?</p>
+                <a href="contact.html" style="display: inline-block; background: #E6A817; color: #0e24a3; padding: 12px 25px; border-radius: 4px; font-weight: 800; text-decoration: none; transition: all 0.3s ease; text-align: center;"
+                   onmouseover="this.style.background='#d4942a'; this.style.transform='scale(1.05)';"
+                   onmouseout="this.style.background='#E6A817'; this.style.transform='scale(1)';">
+                  Get Started Today <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
@@ -392,4 +401,5 @@
 </body>
 
 </html>
+
 

@@ -1,4 +1,4 @@
-﻿/* Consultez | Business Consulting HTML Template
+/* Consultez | Business Consulting HTML Template
 
 Template Name: Consultez
 Version: 1.0.0
@@ -32,7 +32,7 @@ License: copyright commercial
 25. Clients Section
 26. Main Footer
 **********************************************/
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Jost:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800&display=swap");
 @import url("animate.css");
 @import url("swiper.min.css");
 @import url("jquery.fancybox.min.css");
@@ -86,8 +86,8 @@ License: copyright commercial
   --border-light: rgb(255 255 255 / 10%);
   --link-color: var(--headings-color);
   --link-hover-color: var(--headings-color);
-  --title-font: "DM Sans", sans-serif;
-  --text-font: "Inter", sans-serif;
+  --title-font: "Poppins", sans-serif;
+  --text-font: "Raleway", sans-serif;
   --body-font-size: 18px;
   --body-line-height: 36px;
   --body-font-weight: 400;
@@ -23097,7 +23097,7 @@ $grid-breakpoints: (
    ============================================ */
 
 .main-footer {
-  background: linear-gradient(135deg, #1a3e9e 0%, #0f2d2a 100%);
+  background: #0e24a3;
   color: rgba(255,255,255,0.75);
   padding: 0 !important;
   position: relative;
