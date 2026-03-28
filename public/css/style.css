@@ -23097,7 +23097,7 @@ $grid-breakpoints: (
    ============================================ */
 
 .main-footer {
-  background: linear-gradient(135deg, #1a3e9e 0%, #0f2d2a 100%);
+  background: #0e24a3;
   color: rgba(255,255,255,0.75);
   padding: 0 !important;
   position: relative;
