@@ -7154,7 +7154,7 @@ Section Title
   transition: all 300ms linear;
 }
 .blog-block .inner-box:hover .content-box {
-  background-color: transparent;
+  background-color: #ffffff;
 }
 .blog-block .inner-box:hover .content-box .info li svg path {
   fill: var(--theme-color-white);
