@@ -648,18 +648,47 @@
       const tabButtons = document.querySelectorAll('.tab-btn');
       const tabContents = document.querySelectorAll('.tab-content');
 
-      tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const tabId = this.getAttribute('data-tab');
-          
+      function switchTab(tabId) {
+        if (!tabId) return;
+        
+        const targetButton = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        const targetContent = document.getElementById(tabId);
+        
+        if (targetButton && targetContent) {
           // Remove active class from all buttons and contents
           tabButtons.forEach(btn => btn.classList.remove('active'));
           tabContents.forEach(content => content.classList.remove('active'));
           
-          // Add active class to clicked button and corresponding content
-          this.classList.add('active');
-          document.getElementById(tabId).classList.add('active');
+          // Add active class to target button and content
+          targetButton.classList.add('active');
+          targetContent.classList.add('active');
+          
+          // Scroll to the tabs section for better UX
+          targetButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          switchTab(tabId);
+          // Update URL hash without jumping
+          history.pushState(null, null, `#${tabId}`);
         });
+      });
+
+      // Handle initial load with hash
+      const initialHash = window.location.hash.substring(1);
+      if (initialHash) {
+        setTimeout(() => switchTab(initialHash), 100);
+      }
+
+      // Handle hash change while on page (navigating from menu)
+      window.addEventListener('hashchange', function() {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          switchTab(hash);
+        }
       });
     });
   </script>

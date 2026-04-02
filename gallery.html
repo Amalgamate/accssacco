@@ -101,6 +101,36 @@
       text-align: right;
     }
 
+    /* Temporary Delete Button */
+    .delete-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .gallery-item:hover .delete-btn {
+      opacity: 1;
+    }
+
+    .delete-btn:hover {
+      background: #ff0000;
+      transform: scale(1.1);
+    }
+
     /* Gallery Filter Tabs */
     .gallery-filters {
       display: flex;
@@ -347,79 +377,15 @@
         </div>
 
         <!-- Gallery Filter Tabs -->
-        <div class="gallery-filters">
+        <div class="gallery-filters" id="gallery-filters">
           <button class="filter-tab active" data-filter="all">All</button>
-          <button class="filter-tab" data-filter="2026">2026 AGM</button>
+          <!-- Dynamic filters will be inserted here if needed OR keep as is if we know the years -->
           <button class="filter-tab" data-filter="2025">2025 AGM</button>
           <button class="filter-tab" data-filter="2024">2024 AGM</button>
         </div>
 
-        <div class="gallery-grid">
-          <!-- Item 1 -->
-          <div class="gallery-item active" data-filter="all 2026" style="animation: fadeInUp 0.6s ease 0.0s both;">
-            <img src="/images/gellery/8r-600x400.jpg" alt="Member Meeting 2026" width="600" height="400" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <span class="gallery-title">Member Gathering 2026</span>
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="gallery-item active" data-filter="all 2026" style="animation: fadeInUp 0.6s ease 0.1s both;">
-            <img src="/images/gellery/board-1-600x400.jpeg" alt="Board Meeting 2026" width="600" height="400" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <span class="gallery-title">Board Session 2026</span>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="gallery-item active" data-filter="all 2026" style="animation: fadeInUp 0.6s ease 0.2s both;">
-            <img src="/images/gellery/creditcommitee-600x600.jpeg" alt="Credit Committee 2026" width="600" height="600" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <span class="gallery-title">Credit Committee Meeting 2026</span>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="gallery-item active" data-filter="all 2025" style="animation: fadeInUp 0.6s ease 0.0s both;">
-            <img src="/images/gellery/8r-1024x683.jpg" alt="Community Event 2025" width="1024" height="683" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <span class="gallery-title">Community Engagement 2025</span>
-            </div>
-          </div>
-
-          <!-- Item 5 -->
-          <div class="gallery-item active" data-filter="all 2025" style="animation: fadeInUp 0.6s ease 0.1s both;">
-            <img src="/images/gellery/board-1-360x320.jpeg" alt="Leadership Session 2025" width="360" height="320" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <span class="gallery-title">Leadership Session 2025</span>
-            </div>
-          </div>
-
-          <!-- Item 6 -->
-          <div class="gallery-item active" data-filter="all 2024" style="animation: fadeInUp 0.6s ease 0.2s both;">
-            <img src="/images/gellery/DSC_0104-300x200.jpg" alt="Annual Event 2024" width="300" height="200" loading="lazy">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <span class="gallery-title">Annual General Meeting 2024</span>
-            </div>
-          </div>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Items will be dynamically loaded here -->
         </div>
       </div>
     </section>
@@ -498,42 +464,198 @@
 
   </div>
 
-  <!-- Scripts -->
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.fancybox.js"></script>
   <script src="/js/slick.min.js"></script>
   <script src="/js/wow.js"></script>
   <script src="/js/script.js"></script>
 
   <script>
-    // Gallery Filter Functionality with performance optimization
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    filterTabs.forEach(tab => {
-      tab.addEventListener('click', event => {
-        event.preventDefault();
-        const filterValue = tab.getAttribute('data-filter');
+    async function loadGallery() {
+      const grid = document.getElementById('gallery-grid');
+      const filterContainer = document.getElementById('gallery-filters');
+      const toSlug = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, '-');
+
+      try {
+        const response = await fetch('/images/gellery/gallery-data.json');
+        if (!response.ok) throw new Error('Could not load gallery data');
+        const images = await response.json();
         
-        // Update active tab
-        filterTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+        // Extract unique years and create filter buttons
+        const years = [...new Set(images.map(img => img.year))].sort((a, b) => {
+          if (!isNaN(a) && !isNaN(b)) return b - a;
+          return a.localeCompare(b);
+        });
         
-        // Use requestAnimationFrame for smooth performance
-        requestAnimationFrame(() => {
-          // Filter gallery items
-          galleryItems.forEach(item => {
-            const itemFilters = item.getAttribute('data-filter').split(' ');
-            const shouldShow = filterValue === 'all' || itemFilters.includes(filterValue);
+        filterContainer.innerHTML = '<button class="filter-tab active" data-filter="all">All</button>';
+        years.forEach(year => {
+          const btn = document.createElement('button');
+          btn.className = 'filter-tab';
+          btn.setAttribute('data-filter', toSlug(year));
+          
+          const label = /^\d{4}$/.test(year) ? `${year} AGM` : year;
+          btn.textContent = label;
+          filterContainer.appendChild(btn);
+        });
+
+        images.forEach((item, index) => {
+          const encodedSrc = encodeURI(item.src);
+          const galleryItem = document.createElement('div');
+          galleryItem.className = 'gallery-item active';
+          galleryItem.setAttribute('data-filter', `all ${toSlug(item.year)}`);
+          galleryItem.style.animation = `fadeInUp 0.6s ease ${index * 0.02}s both`;
+          
+          galleryItem.innerHTML = `
+            <button class="delete-btn" onclick="deleteImage('${item.src}', this)" title="Delete Image">
+              <i class="fa fa-trash"></i>
+            </button>
+            <a href="${encodedSrc}" class="lightbox-image" data-fancybox="gallery" title="${item.alt}">
+              <img src="${encodedSrc}" alt="${item.alt}" width="600" height="400" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+                <span class="gallery-title">${item.alt}</span>
+              </div>
+            </a>
+          `;
+          grid.appendChild(galleryItem);
+        });
+
+        setupFilter();
+        
+        // Re-initialize Fancybox for dynamic items
+        if (typeof $.fn.fancybox !== 'undefined') {
+          $('[data-fancybox="gallery"]').fancybox({
+            loop: true,
+            // Slideshow options
+            slideShow: {
+              autoStart: false,
+              speed: 4000 // default speed in ms
+            },
+            fullScreen: {
+              autoStart: false
+            },
+            thumbs: {
+              autoStart: false,
+              axis: 'y'
+            },
+            // Controls
+            buttons: [
+              "zoom",
+              "slideShow",
+              "speedToggle", // Custom speed button
+              "fullScreen",
+              "download",
+              "thumbs",
+              "close"
+            ],
+            // Visuals
+            animationEffect: "zoom-in-out",
+            transitionEffect: "circular",
+            transitionDuration: 600,
             
-            item.classList.toggle('active', shouldShow);
+            // Custom button template for speed
+            btnTpl: {
+              speedToggle: `<button data-speed-toggle class="fancybox-button fancybox-button--speed" title="Slideshow Speed">
+                <span style="font-size: 11px; font-weight: 700; line-height: 40px; display: block;">4s</span>
+              </button>`
+            }
+          });
+
+          // Custom handler for speed toggle
+          $(document).on('click', '[data-speed-toggle]', function() {
+            var instance = $.fancybox.getInstance();
+            if (instance) {
+              var speeds = [2000, 4000, 6000];
+              var currentSpeed = instance.opts.slideShow.speed;
+              var nextIndex = (speeds.indexOf(currentSpeed) + 1) % speeds.length;
+              var nextSpeed = speeds[nextIndex];
+              
+              instance.opts.slideShow.speed = nextSpeed;
+              $(this).find('span').text((nextSpeed / 1000) + 's');
+              
+              // If slideshow is running, restart it to apply new speed
+              if (instance.SlideShow.isActive) {
+                instance.SlideShow.stop();
+                instance.SlideShow.start();
+              }
+            }
+          });
+        }
+      } catch (err) {
+        console.error('Gallery loading failed:', err);
+        grid.innerHTML = '<p class="text-center w-100">Click a filter to see moments from our AGM meetings.</p>';
+      }
+    }
+
+    function setupFilter() {
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', event => {
+          event.preventDefault();
+          const filterValue = tab.getAttribute('data-filter');
+          
+          // Update active tab
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          
+          // Use requestAnimationFrame for smooth performance
+          requestAnimationFrame(() => {
+            // Filter gallery items
+            galleryItems.forEach(item => {
+              const itemFilters = item.getAttribute('data-filter').split(' ');
+              const shouldShow = filterValue === 'all' || itemFilters.includes(filterValue);
+              
+              item.classList.toggle('active', shouldShow);
+            });
           });
         });
       });
-    });
+    }
 
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    loadGallery();
+
+    async function deleteImage(src, btn) {
+      if (!confirm('Are you sure you want to permanently delete this image from the server?')) return;
+      
+      try {
+        const response = await fetch('/api/delete-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ src })
+        });
+        
+        if (!response.ok) {
+           const errorText = await response.text();
+           throw new Error(`Server returned ${response.status}: ${errorText}`);
+        }
+        
+        const result = await response.json();
+        if (result.success) {
+          const item = btn.closest('.gallery-item');
+          item.style.transition = 'all 0.5s ease';
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.8)';
+          setTimeout(() => item.remove(), 500);
+        } else {
+          alert('Error: ' + (result.error || 'Unknown error'));
+        }
+      } catch (err) {
+        console.error('Delete failed:', err);
+        alert(`Deletion failed. Possible causes:
+        1. Restart the dev server (stop 'npm run dev' and start it again).
+        2. Check for port conflicts (old server stuck on port 5173).
+        
+        System Error: ${err.message}`);
+      }
+    }
   </script>
 </body>
 
