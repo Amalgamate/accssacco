@@ -101,35 +101,6 @@
       text-align: right;
     }
 
-    /* Temporary Delete Button */
-    .delete-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      width: 36px;
-      height: 36px;
-      background: rgba(255, 0, 0, 0.8);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      opacity: 0;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .gallery-item:hover .delete-btn {
-      opacity: 1;
-    }
-
-    .delete-btn:hover {
-      background: #ff0000;
-      transform: scale(1.1);
-    }
 
     /* Gallery Filter Tabs */
     .gallery-filters {
@@ -246,9 +217,6 @@
           <nav class="nav main-menu">
             <ul class="navigation">
               <li><a href="index.html">Home</a></li>
-              <li><a href="loans.html">Loans</a></li>
-              <li><a href="savings.html">Savings</a></li>
-              <li><a href="blog.html">News</a></li>
               <li class="dropdown"><a href="about.html">About</a>
                 <ul>
                   <li><a href="about.html">About</a></li>
@@ -266,6 +234,9 @@
                   </li>
                 </ul>
               </li>
+              <li><a href="loans.html">Loans</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li><a href="blog.html">News</a></li>
               <li><a href="downloads.html">Downloads</a></li>
               <li class="current"><a href="gallery.html">Gallery</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -510,9 +481,6 @@
           galleryItem.style.animation = `fadeInUp 0.6s ease ${index * 0.02}s both`;
           
           galleryItem.innerHTML = `
-            <button class="delete-btn" onclick="deleteImage('${item.src}', this)" title="Delete Image">
-              <i class="fa fa-trash"></i>
-            </button>
             <a href="${encodedSrc}" class="lightbox-image" data-fancybox="gallery" title="${item.alt}">
               <img src="${encodedSrc}" alt="${item.alt}" width="600" height="400" loading="lazy">
               <div class="gallery-overlay">
@@ -622,40 +590,7 @@
 
     loadGallery();
 
-    async function deleteImage(src, btn) {
-      if (!confirm('Are you sure you want to permanently delete this image from the server?')) return;
-      
-      try {
-        const response = await fetch('/api/delete-image', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ src })
-        });
-        
-        if (!response.ok) {
-           const errorText = await response.text();
-           throw new Error(`Server returned ${response.status}: ${errorText}`);
-        }
-        
-        const result = await response.json();
-        if (result.success) {
-          const item = btn.closest('.gallery-item');
-          item.style.transition = 'all 0.5s ease';
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.8)';
-          setTimeout(() => item.remove(), 500);
-        } else {
-          alert('Error: ' + (result.error || 'Unknown error'));
-        }
-      } catch (err) {
-        console.error('Delete failed:', err);
-        alert(`Deletion failed. Possible causes:
-        1. Restart the dev server (stop 'npm run dev' and start it again).
-        2. Check for port conflicts (old server stuck on port 5173).
-        
-        System Error: ${err.message}`);
-      }
-    }
+
   </script>
 </body>
 
