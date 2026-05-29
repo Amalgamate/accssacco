@@ -1,7 +1,7 @@
 param()
 
-$root        = "c:\Amalgamate\Projects\Web\ACCS SAcco\accs-sacco"
-$publicImg   = "$root\public\images"
+$root = "c:\Amalgamate\Projects\Web\ACCS SAcco\accs-sacco"
+$publicImg = "$root\public\images"
 
 # ── 1. Build a HashSet of every image file that actually exists on disk ─────
 $onDisk = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
@@ -13,7 +13,7 @@ Write-Host "Images on disk : $($onDisk.Count)" -ForegroundColor Cyan
 
 # ── 2. Collect all references from HTML files ────────────────────────────────
 $broken = [System.Collections.Generic.List[PSCustomObject]]::new()
-$total  = 0
+$total = 0
 
 # Pattern: src="..." or url("...") containing /images/  with image extension
 $pattern = [regex]@"
@@ -23,16 +23,16 @@ $pattern = [regex]@"
 $htmlFiles = Get-ChildItem -Path $root -Filter "*.html" -File
 foreach ($f in $htmlFiles) {
     $text = [System.IO.File]::ReadAllText($f.FullName)
-    $ms   = $pattern.Matches($text)
+    $ms = $pattern.Matches($text)
     foreach ($m in $ms) {
-        $raw  = $m.Groups[1].Value.Trim() -replace "[?#].*$", ""
+        $raw = $m.Groups[1].Value.Trim() -replace "[?#].*$", ""
         if ($raw -notmatch "^/images/") { continue }
         $total++
         if (-not $onDisk.Contains($raw)) {
             $broken.Add([PSCustomObject]@{
-                File = $f.Name
-                Ref  = $raw
-            })
+                    File = $f.Name
+                    Ref  = $raw
+                })
         }
     }
 }
@@ -40,17 +40,17 @@ foreach ($f in $htmlFiles) {
 # ── 3. Check gallery-data.json ───────────────────────────────────────────────
 $galleryJson = "$root\public\images\gellery\gallery-data.json"
 if (Test-Path $galleryJson) {
-    $text    = [System.IO.File]::ReadAllText($galleryJson)
+    $text = [System.IO.File]::ReadAllText($galleryJson)
     $jsonPat = [regex]'"(?:src|thumbnail|url)"\s*:\s*"(/images/[^"]+)"'
-    $ms      = $jsonPat.Matches($text)
+    $ms = $jsonPat.Matches($text)
     foreach ($m in $ms) {
         $raw = $m.Groups[1].Value.Trim() -replace "[?#].*$", ""
         $total++
         if (-not $onDisk.Contains($raw)) {
             $broken.Add([PSCustomObject]@{
-                File = "gallery-data.json"
-                Ref  = $raw
-            })
+                    File = "gallery-data.json"
+                    Ref  = $raw
+                })
         }
     }
 }
@@ -58,17 +58,17 @@ if (Test-Path $galleryJson) {
 # ── 4. Check style.css ──────────────────────────────────────────────────────
 $cssFile = "$root\public\css\style.css"
 if (Test-Path $cssFile) {
-    $text    = [System.IO.File]::ReadAllText($cssFile)
-    $cssPat  = [regex]'url\(["'']?(/images/[^"''\)\s]+\.(?:jpe?g|png|webp|gif|svg))["'']?\)'
-    $ms      = $cssPat.Matches($text)
+    $text = [System.IO.File]::ReadAllText($cssFile)
+    $cssPat = [regex]'url\(["'']?(/images/[^"''\)\s]+\.(?:jpe?g|png|webp|gif|svg))["'']?\)'
+    $ms = $cssPat.Matches($text)
     foreach ($m in $ms) {
         $raw = $m.Groups[1].Value.Trim() -replace "[?#].*$", ""
         $total++
         if (-not $onDisk.Contains($raw)) {
             $broken.Add([PSCustomObject]@{
-                File = "style.css"
-                Ref  = $raw
-            })
+                    File = "style.css"
+                    Ref  = $raw
+                })
         }
     }
 }
@@ -86,7 +86,8 @@ Write-Host ""
 
 if ($uniqueBroken.Count -eq 0) {
     Write-Host "  All image references are valid!" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "  MISSING IMAGE FILES:" -ForegroundColor Red
     $uniqueBroken | ForEach-Object {
         Write-Host "    [MISSING] $($_.Ref)" -ForegroundColor Red

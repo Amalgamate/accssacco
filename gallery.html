@@ -504,7 +504,7 @@
           
           galleryItem.innerHTML = `
             <a href="${encodedSrc}" class="lightbox-image" data-fancybox="gallery" title="${item.alt}">
-              <img src="${encodedSrc}" alt="${item.alt}" width="600" height="400" loading="lazy">
+              <img src="${encodedSrc}" alt="${item.alt}" width="600" height="400" loading="lazy" style="object-position: ${item.position || 'center'};">
               <span class="gallery-counter">${index + 1}</span>
               <div class="gallery-overlay">
                 <div class="gallery-overlay-icon">
