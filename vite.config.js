@@ -70,6 +70,7 @@ export default defineConfig({
         board: 'board.html',
         management: 'management.html',
         supervisory: 'supervisory.html',
+        application: 'application.html',
       }
     }
   }

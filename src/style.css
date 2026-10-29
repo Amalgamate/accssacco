@@ -405,8 +405,8 @@ textarea { resize: vertical; min-height: 120px; }
 }
 .footer-widget-grid {
   display: grid;
-  grid-template-columns: 2.2fr 1.2fr 1.4fr 1.8fr;
-  gap: 40px;
+  grid-template-columns: 1.35fr 1.25fr 0.95fr 1.05fr;
+  gap: 24px;
 }
 
 /* Column 1 — brand */
