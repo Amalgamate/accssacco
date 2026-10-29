@@ -23137,7 +23137,7 @@ $grid-breakpoints: (
 
 .footer-widget-grid {
   display: grid !important;
-  grid-template-columns: 1.35fr 1.25fr 0.95fr 1.05fr !important;
+  grid-template-columns: 1.25fr 1.15fr 1.25fr 1.05fr !important;
   gap: 24px !important;
   align-items: start !important;
   padding: 0 !important;
@@ -23353,54 +23353,34 @@ $grid-breakpoints: (
 }
 
 /* Paybill box */
+.footer-paybill-wrap {
+  width: 100% !important;
+  max-width: 270px !important;
+  display: block !important;
+}
+
+.footer-paybill-img {
+  width: 100% !important;
+  max-width: 270px !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.footer-paybill-img:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+}
+
 .footer-paybill-box {
-  background: #ffffff !important;
-  border-radius: 12px !important;
-  padding: 14px 16px !important;
-  text-align: center !important;
-  border: 2px solid #00843D !important;
-  max-width: 200px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  max-width: 270px !important;
   width: 100% !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15) !important;
-}
-
-.footer-paybill-box img {
-  width: 100% !important;
-  max-height: 48px !important;
-  object-fit: contain !important;
-  border-radius: 6px !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-
-.footer-paybill-box .paybill-meta {
-  margin-top: 10px !important;
-  font-size: 13px !important;
-  line-height: 1.4 !important;
-}
-
-.footer-paybill-box .paybill-label {
-  display: block !important;
-  font-weight: 700 !important;
-  color: #00843D !important;
-  font-size: 13px !important;
-  letter-spacing: 0.5px !important;
-}
-
-.footer-paybill-box .paybill-number {
-  display: block !important;
-  font-size: 22px !important;
-  font-weight: 900 !important;
-  color: #111827 !important;
-  letter-spacing: 2px !important;
-  margin: 2px 0 !important;
-}
-
-.footer-paybill-box .paybill-acc {
-  display: block !important;
-  color: #555555 !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
+  box-shadow: none !important;
 }
 
 /* Member Info & Hours */
