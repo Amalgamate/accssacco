@@ -71,9 +71,6 @@
           <nav class="nav main-menu">
             <ul class="navigation">
               <li class="current"><a href="index.html">Home</a></li>
-              <li><a href="loans.html">Loans</a></li>
-              <li><a href="savings.html">Savings</a></li>
-              <li><a href="blog.html">News</a></li>
               <li class="dropdown"><a href="about.html">About</a>
                 <ul>
                   <li><a href="about.html">About</a></li>
@@ -91,6 +88,9 @@
                   </li>
                 </ul>
               </li>
+              <li><a href="loans.html">Loans</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li><a href="blog.html">News</a></li>
               <li><a href="downloads.html">Downloads</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -175,12 +175,35 @@
     </header>
     <!--End Main Header -->
 
+    <!-- NOTICE MARQUEE — AGM 4 April 2026 (commented out after event passed)
+    <section class="announcement-bar" style="background:#E74C3C;color:#fff;padding:0.35rem 0;width:100%;">
+      <div class="auto-container" style="overflow:hidden;">
+        <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop()" onmouseout="this.start()" style="font-size: 14px; font-weight: 700; letter-spacing: 0.5px;">
+          NOTICE: ACC&S SACCO 11th Annual General Meeting on Saturday, 4 April 2026 at Old Church Hall, Head Office Grounds, Thika from 9:00am. Send questions by 27 March 2026 via info@accssacco.co.ke or WhatsApp 0712766276.
+        </marquee>
+      </div>
+    </section>
+    -->
 
     <!-- Hero Slider start -->
     <section class="accs-hero">
 
       <div class="accs-hero__slider swiper" id="accsHeroSwiper">
         <div class="swiper-wrapper">
+
+          <!-- Award Recognition Slide -->
+          <div class="swiper-slide accs-hero__slide" style="background-color:#102a7d; background-image:url('/images/slider/award-1.png'); background-size:contain; background-repeat:no-repeat; background-position:82% center;">
+            <div class="accs-hero__overlay"></div>
+            <div class="container h-100">
+              <div class="accs-hero__content">
+                <span class="accs-hero__tag">Member Achievement</span>
+                <h1 class="accs-hero__title">Recognised for<br><span>Share Capital Growth</span></h1>
+                <div class="accs-hero__divider"></div>
+                <p class="accs-hero__text">ACC&amp;S SACCO received a certificate of appreciation and medal for the highest share capital mobilisation in Thika Sub-County.</p>
+                <div class="accs-hero__actions"><a href="blog.html#share-capital-award" class="accs-btn accs-btn--primary">Read the Feature</a></div>
+              </div>
+            </div>
+          </div>
 
           <!-- Slide 1 -->
           <div class="swiper-slide accs-hero__slide" style="background-image:url('/images/slider/slide1.jpg')">
@@ -204,7 +227,7 @@
             <div class="accs-hero__overlay"></div>
             <div class="container h-100">
               <div class="accs-hero__content">
-                <span class="accs-hero__tag">Empowering Members Since 2006</span>
+                <span class="accs-hero__tag">Empowering Members Since 2016</span>
                 <h1 class="accs-hero__title">Your Journey to <br><span>Wealth Creation</span></h1>
                 <div class="accs-hero__divider"></div>
                 <p class="accs-hero__text">Experience financial freedom with a SACCO that puts you first. We provide the tools and support you need to build a lasting legacy for your family.</p>
@@ -662,7 +685,7 @@
                 <div class="sec-title">
                   <h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">ABOUT ACC&S SACCO</h6>
                   <h2 class="title wow splt-txt" data-splitting>The Journey Behind Our Members Success</h2>
-                  <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">ACC&S SACCO LTD is the home of development, offering affordable credit and savings solutions to empower our community since 2006.</p>
+                  <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">ACC&S SACCO LTD is the home of development, offering affordable credit and savings solutions to empower our community since 2016.</p>
                 </div>
                 <div class="about-block wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
                   <div class="inner-box">
@@ -880,7 +903,7 @@
               <h4 class="loan-card__title">Development Loan</h4>
               <p class="loan-card__text">Long-term finance for property, construction, renovation, land purchase, and development projects.</p>
               <ul class="loan-card__list">
-                <li><i class="fa-solid fa-check"></i> Loan limit: KES 1.8 Million</li>
+                <li><i class="fa-solid fa-check"></i> Loan limit: KES 2 Million</li>
                 <li><i class="fa-solid fa-check"></i> Repayment: 1-60 months</li>
                 <li><i class="fa-solid fa-check"></i> Interest: 1% reducing balance/month</li>
               </ul>
@@ -948,7 +971,7 @@
               <h4 class="loan-card__title">Refinance/Top Up Loan</h4>
               <p class="loan-card__text">Restructure or increase your existing loan facility to meet growing financial needs.</p>
               <ul class="loan-card__list">
-                <li><i class="fa-solid fa-check"></i> Loan limit: KES 1.8 Million</li>
+                <li><i class="fa-solid fa-check"></i> Loan limit: KES 2 Million</li>
                 <li><i class="fa-solid fa-check"></i> Repayment: 1-60 months</li>
                 <li><i class="fa-solid fa-check"></i> Interest: 1% reducing balance/month</li>
               </ul>
@@ -1100,20 +1123,38 @@
 
         <div class="swiper blog-slider">
           <div class="swiper-wrapper">
+            <!-- Award Recognition -->
+            <div class="swiper-slide">
+              <div class="blog-block">
+                <div class="inner-box border rounded p-3">
+                  <div class="image-box mb-3" style="position:relative; background:#f7f8fc;">
+                    <img src="/images/slider/award-1.png" alt="ACC&S SACCO certificate of appreciation" class="rounded w-100" style="height:220px; object-fit:contain;">
+                    <span style="position:absolute; top:15px; left:15px; background:#E6A817; color:#0e24a3; font-size:12px; font-weight:700; letter-spacing:1px; padding:6px 12px; border-radius:18px; text-transform:uppercase;">Recognition</span>
+                  </div>
+                  <div class="content-box">
+                    <h4 class="title mb-3" style="font-weight:800;"><a href="blog.html#share-capital-award" style="color:#0e24a3;">Honoured for Share Capital Mobilisation</a></h4>
+                    <p class="text" style="font-size:14px; color:#666;">Kiambu County Cooperatives Association recognised ACC&amp;S SACCO for the highest share capital mobilisation in Thika Sub-County.</p>
+                    <a href="blog.html#share-capital-award" style="font-weight:700; color:#0e24a3; text-decoration:none; margin-top:16px; display:inline-block;">Read more &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Blog 1 -->
             <div class="swiper-slide">
               <div class="blog-block">
                 <div class="inner-box border rounded p-3">
-                  <div class="image-box mb-3">
-                    <img src="/images/blog/blog-image1.jpg" alt="News" class="rounded w-100">
+                  <div class="image-box mb-3" style="position: relative;">
+                    <img src="/images/blog/blog-image1.jpg" alt="AGM Notice" class="rounded w-100">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #E74C3C; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 6px 12px; border-radius: 18px; text-transform: uppercase;">Announcement</span>
                   </div>
                   <div class="content-box">
                     <ul class="info list-inline mb-2" style="font-size: 13px; color: #E6A817;">
-                      <li class="list-inline-item"><i class="fa-solid fa-calendar-days mr-1"></i> March 2026</li>
+                      <li class="list-inline-item"><i class="fa-solid fa-calendar-days mr-1"></i> 4 April 2026</li>
                       <li class="list-inline-item"><i class="fa-solid fa-user mr-1"></i> Admin</li>
                     </ul>
-                    <h4 class="title mb-3" style="font-weight: 800;"><a href="#" style="color: #0e24a3;">Annual General Meeting 2026: Celebrating Growth</a></h4>
-                    <p class="text" style="font-size: 14px; color: #666;">Join us as we reflect on a decade of empowering members and achieving financial milestones.</p>
+                    <h4 class="title mb-3" style="font-weight: 800;"><a href="blog.html#agm-announce" style="color: #0e24a3;">Notice of the 11th ACC&S SACCO AGM</a></h4>
+                    <p class="text" style="font-size: 14px; color: #666;">The AGM will be held at Old Church Hall, Head Office Grounds, Thika from 9:00am. Agenda includes Chairman, Supervisory and Credit Committee reports, accounts, dividends, budget, auditors and elections. Send questions by 27 March 2026 via info@accssacco.co.ke or WhatsApp 0712766276.</p>
+                    <a href="blog.html#agm-announce" style="font-weight: 700; color: #0e24a3; text-decoration: none; margin-top: 16px; display: inline-block; transition: color 0.3s;">Read more ?</a>
                   </div>
                 </div>
               </div>
@@ -1122,16 +1163,18 @@
             <div class="swiper-slide">
               <div class="blog-block">
                 <div class="inner-box border rounded p-3">
-                  <div class="image-box mb-3">
-                    <img src="/images/blog/blog-image2.jpg" alt="News" class="rounded w-100">
+                  <div class="image-box mb-3" style="position: relative;">
+                    <img src="/images/blog/sacco week.jpg" alt="SACCO Week 2026" class="rounded w-100">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #28A745; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 6px 12px; border-radius: 18px; text-transform: uppercase;">Past Event</span>
                   </div>
                   <div class="content-box">
                     <ul class="info list-inline mb-2" style="font-size: 13px; color: #E6A817;">
-                      <li class="list-inline-item"><i class="fa-solid fa-calendar-days mr-1"></i> February 2026</li>
+                      <li class="list-inline-item"><i class="fa-solid fa-calendar-days mr-1"></i> January 2026</li>
                       <li class="list-inline-item"><i class="fa-solid fa-user mr-1"></i> Admin</li>
                     </ul>
-                    <h4 class="title mb-3" style="font-weight: 800;"><a href="#" style="color: #0e24a3;">New Mobile Banking Features: Save on the Go</a></h4>
-                    <p class="text" style="font-size: 14px; color: #666;">Experience seamless banking with our newly updated mobile app. Save, borrow, and track easily.</p>
+                    <h4 class="title mb-3" style="font-weight: 800;"><a href="blog.html#post0" style="color: #0e24a3;">SACCO Week 2026 Special Offer</a></h4>
+                    <p class="text" style="font-size: 14px; color: #666;">Empowering Dreams, Building Wealth! Join during SACCO Week for reduced registration fees, special bylaws offers, and flexible share capital contributions.</p>
+                    <a href="blog.html#post0" style="font-weight: 700; color: #0e24a3; text-decoration: none; margin-top: 16px; display: inline-block; transition: color 0.3s;">Read more ?</a>
                   </div>
                 </div>
               </div>
@@ -1152,9 +1195,9 @@
             <!-- Col 1: Logo & Brand -->
             <div>
               <a href="index.html" class="footer-brand__logo">
-                <img src="/images/ACCS-footer-logo.png" alt="ACC&S SACCO" style="height: 80px; width: auto; object-fit: contain; margin-bottom: 15px;">
+                <img src="/images/ACCS-footer-logo.png" alt="ACC&S SACCO" style="height: 75px; width: auto; object-fit: contain; margin-bottom: 12px;">
               </a>
-              <p class="footer-brand__desc">Mobilizing savings and providing affordable credit facilities to our members since 2006. Regulated by SASRA.</p>
+              <p class="footer-brand__desc">Mobilizing savings and providing affordable credit facilities to our members since 2016. Regulated by SASRA.</p>
               <div class="footer-brand__social">
                 <a href="https://web.facebook.com/accsaccoltd" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1173,7 +1216,7 @@
                 </li>
                 <li>
                   <span class="fc-icon"><i class="fa-solid fa-location-dot"></i></span>
-                  <div class="fc-text"><span class="fc-label">Location</span>Nairobi, Kenya</div>
+                  <div class="fc-text"><span class="fc-label">Location</span>General Kago Road Next to Mount Kenya University, Thika, Kenya</div>
                 </li>
                 <li>
                   <span class="fc-icon"><i class="fa-solid fa-phone"></i></span>
@@ -1182,7 +1225,20 @@
               </ul>
             </div>
 
-            <!-- Col 3: Member Info & Hours -->
+            <!-- Col 3: Lipa Na M-Pesa -->
+            <div>
+              <h6 class="footer-col-title">Lipa Na M-Pesa</h6>
+              <div class="footer-paybill-box" style="background:#fff; border-radius:12px; padding:14px 16px; text-align:center; border:2px solid #00843D; max-width:200px;">
+                <img src="/images/mpesa-paybill.jpg" alt="Lipa Na M-Pesa Paybill" style="width:100%; max-height:48px; object-fit:contain; border-radius:6px; display:block; margin:0 auto;">
+                <div class="paybill-meta" style="margin-top:10px; font-size:13px; line-height:1.4;">
+                  <span class="paybill-label" style="display:block; font-weight:700; color:#00843D; font-size:13px; letter-spacing:0.5px;">PAYBILL</span>
+                  <span class="paybill-number" style="display:block; font-size:22px; font-weight:900; color:#111827; letter-spacing:2px; margin:2px 0;">837047</span>
+                  <span class="paybill-acc" style="display:block; color:#555555; font-size:11px; font-weight:600;">Account: Member No.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 4: Member Info & Hours -->
             <div>
               <h6 class="footer-col-title">Member Info</h6>
               <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> SASRA Regulated</span>
@@ -1256,5 +1312,4 @@
 </body>
 
 </html>
-
 

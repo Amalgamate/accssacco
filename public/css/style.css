@@ -565,40 +565,51 @@ figure.image {
   height: 100%;
   z-index: 999999;
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
 .preloader:after {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 150px;
-  margin-left: -75px;
-  margin-top: -30px;
-  height: 50px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-animation: pulse 1s infinite linear;
-          animation: pulse 1s infinite linear;
-  background-image: url(../images/favicon.png);
   content: "";
+  width: 60px;
+  height: 60px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--theme-color1); /* Gold */
+  border-right: 4px solid var(--theme-color2); /* Deep Blue */
+  border-radius: 50%;
+  -webkit-animation: spin 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: spin 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
+
 .preloader:before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
+  content: "ACC&S SACCO";
   margin-top: 20px;
-  color: var(--theme-color-dark);
-  font-weight: 600;
-  font-size: 14px;
+  color: var(--theme-color2);
+  font-weight: 700;
+  font-size: 13px;
   font-family: var(--title-font);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  content: "Loading";
-  -webkit-transition: none;
-  transition: none;
+  opacity: 0.8;
+  -webkit-animation: pulse-text 2s infinite ease-in-out;
+  animation: pulse-text 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-text {
+  0%, 100% { opacity: 0.5; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
 }
 
 /*=======================
@@ -7143,7 +7154,7 @@ Section Title
   transition: all 300ms linear;
 }
 .blog-block .inner-box:hover .content-box {
-  background-color: transparent;
+  background-color: #ffffff;
 }
 .blog-block .inner-box:hover .content-box .info li svg path {
   fill: var(--theme-color-white);
@@ -23117,53 +23128,55 @@ $grid-breakpoints: (
   z-index: 1;
 }
 
-/* Footer widget area - 3 column redesign */
+/* Footer widget area - 4 column single-row global layout */
 .footer-widget-area {
-  padding: 100px 0 60px;
+  padding: 60px 0 45px !important;
   position: relative;
   z-index: 2;
 }
 
 .footer-widget-grid {
   display: grid !important;
-  grid-template-columns: 1.5fr 1.2fr 1.2fr !important;
-  gap: 60px !important;
+  grid-template-columns: 1.35fr 1.25fr 0.95fr 1.05fr !important;
+  gap: 24px !important;
+  align-items: start !important;
   padding: 0 !important;
   border: none !important;
   margin: 0 !important;
 }
 
-/* COLUMN 1: Brand & Logo */
-.footer-widget-grid > div:nth-child(1) {
-  display: flex;
-  flex-direction: column;
+.footer-widget-grid > div {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
 }
 
+/* COLUMN 1: Brand & Logo */
 .footer-brand__logo {
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 20px !important;
-  margin-bottom: 30px !important;
+  gap: 15px !important;
+  margin-bottom: 14px !important;
   text-decoration: none !important;
 }
 
 .footer-brand__icon {
-  width: 80px !important;
-  height: 80px !important;
+  width: 60px !important;
+  height: 60px !important;
   background: linear-gradient(135deg, #0f2d2a 0%, #1a3e9e 100%) !important;
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 24px !important;
+  font-size: 20px !important;
   font-weight: 900 !important;
   color: #E6A817 !important;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(15,45,42,0.3);
+  box-shadow: 0 6px 16px rgba(15,45,42,0.3);
 }
 
 .footer-brand__name {
-  font-size: 20px !important;
+  font-size: 18px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   letter-spacing: 0.03em !important;
@@ -23179,21 +23192,22 @@ $grid-breakpoints: (
 }
 
 .footer-brand__desc {
-  font-size: 14px !important;
-  color: rgba(255,255,255,0.65) !important;
-  line-height: 1.8 !important;
-  margin: 25px 0 30px !important;
-  max-width: 320px !important;
+  font-size: 13.5px !important;
+  color: rgba(255,255,255,0.70) !important;
+  line-height: 1.65 !important;
+  margin: 0 0 20px !important;
+  max-width: 100% !important;
 }
 
 .footer-brand__social {
   display: flex !important;
-  gap: 14px !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
 }
 
 .footer-social-btn {
-  width: 44px !important;
-  height: 44px !important;
+  width: 38px !important;
+  height: 38px !important;
   background: rgba(230,168,23,0.15) !important;
   border: 2px solid rgba(230,168,23,0.25) !important;
   border-radius: 8px !important;
@@ -23201,7 +23215,7 @@ $grid-breakpoints: (
   align-items: center !important;
   justify-content: center !important;
   color: #E6A817 !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
   transition: all 0.3s ease !important;
 }
 
@@ -23209,23 +23223,18 @@ $grid-breakpoints: (
   background: #E6A817 !important;
   border-color: #E6A817 !important;
   color: #1a3e9e !important;
-  transform: translateY(-4px) !important;
-  box-shadow: 0 8px 16px rgba(230,168,23,0.3) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 14px rgba(230,168,23,0.3) !important;
 }
 
-/* COLUMN 2: Quick Links + Contact */
-.footer-widget-grid > div:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Headings */
 .footer-col-title {
   font-size: 13px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  letter-spacing: 0.25em !important;
+  letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
-  margin: 0 0 28px !important;
+  margin: 0 0 20px !important;
   padding: 0 !important;
   border: none !important;
   position: relative;
@@ -23234,10 +23243,10 @@ $grid-breakpoints: (
 .footer-col-title::after {
   content: '' !important;
   display: block !important;
-  width: 40px !important;
+  width: 35px !important;
   height: 3px !important;
   background: #E6A817 !important;
-  margin-top: 10px !important;
+  margin-top: 8px !important;
 }
 
 .footer-links {
@@ -23247,12 +23256,12 @@ $grid-breakpoints: (
 }
 
 .footer-links li {
-  margin-bottom: 16px !important;
+  margin-bottom: 14px !important;
 }
 
 .footer-links a {
-  font-size: 14px !important;
-  color: rgba(255,255,255,0.65) !important;
+  font-size: 13.5px !important;
+  color: rgba(255,255,255,0.70) !important;
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -23290,13 +23299,13 @@ $grid-breakpoints: (
 .footer-contact-list li {
   display: flex !important;
   align-items: flex-start !important;
-  gap: 14px !important;
-  margin-bottom: 20px !important;
+  gap: 12px !important;
+  margin-bottom: 14px !important;
 }
 
 .footer-contact-list .fc-icon {
-  width: 40px !important;
-  height: 40px !important;
+  width: 36px !important;
+  height: 36px !important;
   background: rgba(230,168,23,0.15) !important;
   border: 2px solid rgba(230,168,23,0.20) !important;
   border-radius: 6px !important;
@@ -23304,21 +23313,22 @@ $grid-breakpoints: (
   align-items: center !important;
   justify-content: center !important;
   color: #E6A817 !important;
-  font-size: 16px !important;
-  flex-shrink: 0;
+  font-size: 14px !important;
+  flex-shrink: 0 !important;
   transition: all 0.3s ease !important;
 }
 
 .footer-contact-list li:hover .fc-icon {
   background: #E6A817 !important;
   color: #1a3e9e !important;
-  transform: scale(1.1) !important;
+  transform: scale(1.08) !important;
 }
 
 .footer-contact-list .fc-text {
   font-size: 13px !important;
-  color: rgba(255,255,255,0.65) !important;
-  line-height: 1.6 !important;
+  color: rgba(255,255,255,0.70) !important;
+  line-height: 1.5 !important;
+  word-break: break-word !important;
 }
 
 .footer-contact-list .fc-label {
@@ -23332,7 +23342,7 @@ $grid-breakpoints: (
 }
 
 .footer-contact-list .fc-text a {
-  color: rgba(255,255,255,0.65) !important;
+  color: rgba(255,255,255,0.75) !important;
   text-decoration: none !important;
   font-weight: 600 !important;
   transition: color 0.3s ease !important;
@@ -23342,12 +23352,58 @@ $grid-breakpoints: (
   color: #E6A817 !important;
 }
 
-/* COLUMN 3: Member Info & Hours */
-.footer-widget-grid > div:nth-child(3) {
-  display: flex;
-  flex-direction: column;
+/* Paybill box */
+.footer-paybill-box {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  text-align: center !important;
+  border: 2px solid #00843D !important;
+  max-width: 200px !important;
+  width: 100% !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15) !important;
 }
 
+.footer-paybill-box img {
+  width: 100% !important;
+  max-height: 48px !important;
+  object-fit: contain !important;
+  border-radius: 6px !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.footer-paybill-box .paybill-meta {
+  margin-top: 10px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.footer-paybill-box .paybill-label {
+  display: block !important;
+  font-weight: 700 !important;
+  color: #00843D !important;
+  font-size: 13px !important;
+  letter-spacing: 0.5px !important;
+}
+
+.footer-paybill-box .paybill-number {
+  display: block !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  color: #111827 !important;
+  letter-spacing: 2px !important;
+  margin: 2px 0 !important;
+}
+
+.footer-paybill-box .paybill-acc {
+  display: block !important;
+  color: #555555 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+/* Member Info & Hours */
 .footer-badge {
   display: inline-flex !important;
   align-items: center !important;
@@ -23355,26 +23411,26 @@ $grid-breakpoints: (
   background: rgba(230,168,23,0.12) !important;
   border: 2px solid #E6A817 !important;
   border-radius: 8px !important;
-  padding: 12px 18px !important;
+  padding: 8px 14px !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   color: #E6A817 !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 18px !important;
   width: fit-content !important;
   box-shadow: 0 4px 12px rgba(230,168,23,0.1) !important;
 }
 
 .footer-badge i {
-  font-size: 14px !important;
+  font-size: 13px !important;
   color: #E6A817 !important;
 }
 
 .footer-hours {
   font-size: 13px !important;
-  color: rgba(255,255,255,0.65) !important;
-  line-height: 1.8 !important;
+  color: rgba(255,255,255,0.70) !important;
+  line-height: 1.7 !important;
   margin: 0 !important;
 }
 
@@ -23382,14 +23438,14 @@ $grid-breakpoints: (
   display: block !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
 }
 
 /* Bottom bar redesign */
 .footer-bottom-bar {
-  background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
-  padding: 30px 0 !important;
-  border-top: 2px solid rgba(255,255,255,0.1) !important;
+  background: rgba(0, 0, 0, 0.18) !important;
+  padding: 22px 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.12) !important;
   backdrop-filter: blur(10px);
 }
 
@@ -23398,12 +23454,12 @@ $grid-breakpoints: (
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: wrap !important;
-  gap: 20px !important;
+  gap: 16px !important;
 }
 
 .footer-bottom-bar__copy {
-  font-size: 12px !important;
-  color: rgba(255,255,255,0.60) !important;
+  font-size: 12.5px !important;
+  color: rgba(255,255,255,0.65) !important;
   margin: 0 !important;
 }
 
@@ -23417,35 +23473,36 @@ $grid-breakpoints: (
   align-items: center !important;
   gap: 8px !important;
   font-size: 12px !important;
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(255,255,255,0.65) !important;
 }
 
 .footer-bottom-bar__reg i {
   color: #E6A817 !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
 /* Responsive adjustments */
-@media (max-width: 1100px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .footer-widget-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 50px !important;
+    gap: 30px !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-widget-area {
-    padding: 60px 0 40px !important;
+    padding: 45px 0 30px !important;
   }
 
   .footer-widget-grid {
     grid-template-columns: 1fr !important;
-    gap: 40px !important;
+    gap: 26px !important;
   }
 
   .footer-bottom-bar .container {
     flex-direction: column !important;
     align-items: flex-start !important;
+    gap: 10px !important;
   }
 }
 
